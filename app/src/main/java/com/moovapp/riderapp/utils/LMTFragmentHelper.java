@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.moovapp.riderapp.R;
@@ -119,14 +120,12 @@ public class LMTFragmentHelper extends Fragment {
         dialog.setContentView(R.layout.dialog_alert);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        final TextView tvTitle = (TextView) dialog.findViewById(R.id.tvTitle);
-        final TextView tvMessage = (TextView) dialog.findViewById(R.id.tvMessage);
-        final TextView tvOk = (TextView) dialog.findViewById(R.id.tvOk);
-        final TextView tvCancel = (TextView) dialog.findViewById(R.id.tvCancel);
+        final TextView tvTitle = dialog.findViewById(R.id.tvTitle);
+        final TextView tvMessage = dialog.findViewById(R.id.tvMessage);
+        final ImageView tvOk = dialog.findViewById(R.id.tvOk);
+        final ImageView tvCancel = dialog.findViewById(R.id.tvCancel);
         tvTitle.setText(title);
         tvMessage.setText(message);
-        tvOk.setText(okButton);
-        tvCancel.setText(cancelButton);
         tvOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

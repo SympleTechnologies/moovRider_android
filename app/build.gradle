@@ -5,7 +5,6 @@ android {
         config {
             keyAlias 'moov'
             keyPassword 'sics123'
-//            storeFile file('C:/Users/sics/Desktop/New folder (4)/MoovAppRider/keystore.jks')
             storeFile file('./keystore.jks')
             storePassword 'sics123'
         }
@@ -92,5 +91,8 @@ dependencies {
     compile 'com.github.ar-android:DrawRouteMaps:1.0.0'
 
     compile 'com.google.maps.android:android-maps-utils:0.5'
+
+    //Icon Lib
+    implementation 'net.steamcrafted:materialiconlib:1.1.4'
 }
 apply plugin: 'com.google.gms.google-services'

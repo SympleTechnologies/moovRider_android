@@ -25,8 +25,11 @@
     <color name="yellow">#fedd00</color>
     <color name="orange">#ff7513</color>
     <color name="green">#20b137</color>
-    <color name="colorPrimaryLite">#77ee3469</color>
+    <color name="colorPrimaryLite">#f21466</color>
     <color name="pink">#ef466e</color>
+    <color name="divider">#f2f5f5</color>
+    <color name="contact_us_bg">#f9f9fb</color>
+    <color name="accent_button">#F31466</color>
 
     <color name="colorRouteLine">#2162fc</color>
 </resources>
