@@ -4,13 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.moovapp.riderapp.main.HomeActivity;
-import com.moovapp.riderapp.preLogin.LoginActivity;
+import com.moovapp.riderapp.preLogin.LandingPageActivity;
 import com.moovapp.riderapp.utils.Constants;
 import com.moovapp.riderapp.utils.LMTBaseActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -21,13 +23,17 @@ public class SplashScreenActivity extends LMTBaseActivity {
 
     private final int SPLASH_SCREEN_TIME = 1500;
 
+    @BindView(R.id.splash_image)
+    ImageView splashImage;
+
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-        setContentView(R.layout.splash_screen_activity);
+        setContentView(R.layout.splash_screen);
         ButterKnife.bind(this);
         delayFlow();
         getDeviceToken();
+        splashImage.setAlpha(-40);
     }
 
     private void delayFlow() {
@@ -39,7 +45,7 @@ public class SplashScreenActivity extends LMTBaseActivity {
                     startActivity(intent);
                     finish();
                 }else {
-                    Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(SplashScreenActivity.this, LandingPageActivity.class);
                     startActivity(intent);
                     finish();
                 }

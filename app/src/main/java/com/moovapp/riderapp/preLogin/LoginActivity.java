@@ -351,7 +351,9 @@ public class LoginActivity extends LMTBaseActivity implements GoogleApiClient.On
                                 appPrefes.SaveData(Constants.ACCESS_TOKEN, response.body().getData().getAccess_token());
                                 appPrefes.SaveData(Constants.USER_PROFILE_PIC, response.body().getData().getUser_pic_url());
                                 appPrefes.SaveDataBoolean(Constants.USER_LOGGED_IN_STATUS, true);
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                                Intent intent = new Intent(getApplicationContext(), ConfirmationPage.class);
+                                intent.putExtra("userFirstName", response.body().getData().getUser_details().getU_first_name() + "");
                                 startActivity(intent);
                                 finish();
                             }
