@@ -1,6 +1,5 @@
 package com.moovapp.riderapp.main;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +17,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -35,7 +33,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ahmadrosid.lib.drawroutemap.DrawMarker;
 import com.ahmadrosid.lib.drawroutemap.DrawRouteMaps;
 import com.github.ornolfr.ratingview.RatingView;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -55,7 +52,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.maps.android.PolyUtil;
 import com.moovapp.riderapp.R;
-import com.moovapp.riderapp.main.moov.MoovFragment;
 import com.moovapp.riderapp.main.moov.NotificationAction;
 import com.moovapp.riderapp.main.paymentHistory.PaymentHistoryFragment;
 import com.moovapp.riderapp.main.previousRides.PreviousRidesFragment;
@@ -80,7 +76,6 @@ import com.moovapp.riderapp.utils.retrofit.responseModels.CancelRideResponseMode
 import com.moovapp.riderapp.utils.retrofit.responseModels.RideSearchResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.ViewCollegesResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.ViewCurrentRideResponseModel;
-import com.moovapp.riderapp.utils.retrofit.responseModels.ViewProfileResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.ViewWalletBalanceResponseModel;
 import com.moovapp.riderapp.utils.spinnerAdapter.WhiteSpinnerAdapter;
 import com.squareup.picasso.Picasso;
@@ -151,6 +146,8 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
     View viewMoov;
     @BindView(R.id.container)
     FrameLayout container;
+//    @BindView(R.id.settings_view)
+//    CardView settingsView;
 
     @BindView(R.id.autoCompleteDestination)
     CustomAutoCompleteTextView autoCompleteDestination;
@@ -203,6 +200,8 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
     TextView tvDate;
     @BindView(R.id.tvTime)
     TextView tvTime;
+    @BindView(R.id.user_name)
+    TextView userLoggedInName;
 
     private PlacesTask placesTask;
     private ParserTask parserTask;
@@ -250,6 +249,8 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
     private boolean isDraw1stPolyLine = false;
     private int remainingTime = 10;
 
+    private View mMapView;
+
 
     @Override
     protected void onCreate(Bundle arg0) {
@@ -273,6 +274,20 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
         callViewCurrentRideApi();
         checkLocation();
 //        callCurrentRideApi();
+
+        userLoggedInName.setText("Hey " + appPrefes.getData(Constants.USER_FIRST_NAME));
+
+//        settingsView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                drawerLayout.closeDrawers();
+//                currentFragment = "SettingsActivity";
+//                container.setVisibility(View.VISIBLE);
+//                viewMoov.setVisibility(View.GONE);
+//                delayFlow(new SettingsFragment(), "SettingsActivity");
+//                changeMenuBackgroundColor();
+//            }
+//        });
     }
 
     private void checkLocation() {
@@ -289,12 +304,23 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
 
     private void initMap() {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+
+        mMapView = mapFragment.getView();
         mapFragment.getMapAsync(this);
+
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        View locationButton = ((View) mMapView.findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+        RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
+// position on right bottom
+        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        rlp.setMargins(0, 1480, 200, 0);
 
         // Add a marker in Sydney, Australia, and move the camera.
 //        LatLng sydney = new LatLng(-34, 151);
@@ -461,10 +487,10 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
             @Override
             public void onClick(View view) {
                 drawerLayout.closeDrawers();
-                currentFragment = "SettingsFragment";
+                currentFragment = "SettingsActivity";
                 container.setVisibility(View.VISIBLE);
                 viewMoov.setVisibility(View.GONE);
-                delayFlow(new SettingsFragment(), "SettingsFragment");
+                delayFlow(new SettingsFragment(), "SettingsActivity");
                 changeMenuBackgroundColor();
             }
         });
@@ -506,7 +532,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
                 tvTitle.setText("Talk To Us");
                 llTalkToUsNav.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLite));
                 break;
-            case "SettingsFragment":
+            case "SettingsActivity":
                 tvTitle.setText("Settings");
                 llSettingsNav.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLite));
                 break;
