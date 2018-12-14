@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -28,265 +29,616 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".85"
+            android:gravity="fill"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
+            <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--app:cardCornerRadius="7dp"-->
+            <!--app:cardElevation="7dp">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/white"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:padding="10dp"-->
+            <!--android:src="@mipmap/my_location_icon" />-->
+
+            <!--<com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView-->
+            <!--android:id="@+id/autoCompleteLocatio"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/white"-->
+            <!--android:hint="Enter Location"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:paddingRight="15dp"-->
+            <!--android:textColor="@color/black" />-->
+            <!--</LinearLayout>-->
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--app:cardCornerRadius="7dp"-->
+            <!--app:cardElevation="7dp">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/white"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:padding="10dp"-->
+            <!--android:src="@mipmap/destination_location" />-->
+
+            <!--<com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView-->
+            <!--android:id="@+id/autoCompleteDestinatio"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/white"-->
+            <!--android:hint="Enter Destination"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:paddingRight="15dp"-->
+            <!--android:textColor="@color/black" />-->
+            <!--</LinearLayout>-->
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/cbPoo"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:checked="true"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Do you want to pool the ride" />-->
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cardViewNex"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--app:cardCornerRadius="7dp"-->
+                <!--app:cardElevation="7dp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="parent">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:background="@drawable/layout_primary_little_rounded_bg"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="NEXT"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="16dp" />-->
+
+            <!--</android.support.v7.widget.CardView>-->
+
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="40dp"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteY="27dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:orientation="horizontal">
+                <android.support.v7.widget.CardView
+                    android:layout_width="390dp"
+                    android:layout_height="269dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:foregroundGravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="13dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:src="@mipmap/my_location_icon" />
-
-                    <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
-                        android:id="@+id/autoCompleteLocation"
+                    <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:hint="Enter Location"
-                        android:imeOptions="actionNext"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:src="@mipmap/destination_location" />
-
-                    <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
-                        android:id="@+id/autoCompleteDestination"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:hint="Enter Destination"
-                        android:imeOptions="actionNext"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <CheckBox
-                android:id="@+id/cbPool"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:checked="true"
-                android:gravity="center"
-                android:text="Do you want to pool the ride" />
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardViewNext"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/layout_primary_little_rounded_bg"
-                    android:gravity="center"
-                    android:text="NEXT"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardViewRideDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="40dp"
-                android:visibility="gone"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <Spinner
-                        android:id="@+id/spinnerUniversity"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@drawable/layout_gray_little_rounded_white_bg"
-                        android:gravity="center_vertical"
-                        android:hint="University"
-                        android:imeOptions="actionNext"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp">
+                        android:layout_height="match_parent">
 
                         <TextView
+                            android:id="@+id/user_name"
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center_vertical"
-                            android:text="No of seats" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="Hey Felix"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.027"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                        <Spinner
-                            android:id="@+id/spinnerSeats"
-                            android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:layout_alignParentRight="true"
-                            android:background="@drawable/layout_gray_little_rounded_white_bg"
-                            android:gravity="center_vertical"
-                            android:hint="University"
-                            android:imeOptions="actionNext"
-                            android:paddingLeft="15dp"
-                            android:paddingRight="15dp"
-                            android:textColor="@color/black" />
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="Where are you going?"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.037"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraintLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="284dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="359dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                android:id="@+id/autoCompleteLocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:hint="Enter Location"
+                                android:imeOptions="actionNext"
+                                android:paddingLeft="28dp"
+                                android:paddingRight="10dp" />
+
+                            </android.support.v7.widget.CardView>
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraintLayout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="232dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="112dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="359dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                android:id="@+id/autoCompleteDestination"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:hint="Enter Destination"
+                                android:imeOptions="actionNext"
+                                android:paddingLeft="28dp"
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black" />
+                            </android.support.v7.widget.CardView>
+                        </android.support.constraint.ConstraintLayout>
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="40dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="7dp"
-                            android:src="@mipmap/down_arrow" />
-                    </RelativeLayout>
+                            android:id="@+id/imageView2"
+                            android:layout_width="31dp"
+                            android:layout_height="23dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.022"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_search_black_24dp" />
 
-                    <LinearLayout
-                        android:id="@+id/llFutureRideDetails"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:visibility="gone"
-                        android:orientation="horizontal"
-                        android:weightSum="2.1">
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="21dp"
+                            android:layout_height="23dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="136dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.027"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/my_location_icon" />
+
+                        <CheckBox
+                            android:id="@+id/cbPool"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="59dp"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="Do you want to pool the ride"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
+                            app:layout_constraintHorizontal_bias="0.061"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cardViewNext"
+                            android:layout_width="330dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:visibility="visible"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="69dp"
+                            android:backgroundTint="@color/colorPrimaryDark"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginBottom="11dp"
+                                    android:gravity="center"
+                                    android:text="NEXT"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.501"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </android.support.constraint.ConstraintLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cardViewMove"
+                            android:layout_width="330dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="172dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:backgroundTint="@color/colorPrimaryDark"
+                            android:visibility="gone"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tvMoov"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:gravity="center"
+                                    android:text="MOOV"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </android.support.constraint.ConstraintLayout>
+
+                        </android.support.v7.widget.CardView>
+
 
                         <TextView
-                            android:id="@+id/tvDate"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="Date"
-                            android:textColor="@color/black"
-                            android:paddingLeft="15dp"
-                            android:paddingRight="15dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/layout_gray_little_rounded_white_bg" />
+                            android:id="@+id/tvBookFutureRide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="224dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="Schedule a ride"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.501"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".1" />
+                    </android.support.constraint.ConstraintLayout>
+                </android.support.v7.widget.CardView>
 
-                        <TextView
-                            android:id="@+id/tvTime"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="Time"
-                            android:paddingLeft="15dp"
-                            android:textColor="@color/black"
-                            android:paddingRight="15dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/layout_gray_little_rounded_white_bg" />
-
-                    </LinearLayout>
-
-                    <EditText
-                        android:id="@+id/tvAmount"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/layout_gray_little_rounded_white_bg"
-                        android:focusable="false"
-                        android:gravity="center_vertical"
-                        android:hint="Amount"
-                        android:imeOptions="actionNext"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardViewMove"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp"
-                android:visibility="gone"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
-
-                <TextView
-                    android:id="@+id/tvMoov"
+                <!--but it here-->
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/layout_primary_little_rounded_bg"
-                    android:gravity="center"
-                    android:text="MOOV"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-            </android.support.v7.widget.CardView>
+                    android:layout_height="256dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="292dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <!--acct here-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardViewRideDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
 
-            <TextView
-                android:id="@+id/tvBookFutureRide"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Schedule a ride"
-                android:visibility="gone"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <Spinner
+                                android:id="@+id/spinnerUniversity"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/layout_gray_little_rounded_white_bg"
+                                android:gravity="center_vertical"
+                                android:hint="University"
+                                android:imeOptions="actionNext"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:gravity="center_vertical"
+                                    android:text="No of seats" />
+
+                                <Spinner
+                                    android:id="@+id/spinnerSeats"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:background="@drawable/layout_gray_little_rounded_white_bg"
+                                    android:gravity="center_vertical"
+                                    android:hint="University"
+                                    android:imeOptions="actionNext"
+                                    android:paddingLeft="15dp"
+                                    android:paddingRight="15dp"
+                                    android:textColor="@color/black" />
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="7dp"
+                                    android:src="@mipmap/down_arrow" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llFutureRideDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:weightSum="2.1">
+
+                                <TextView
+                                    android:id="@+id/tvDate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/layout_gray_little_rounded_white_bg"
+                                    android:gravity="center_vertical"
+                                    android:hint="Date"
+                                    android:paddingLeft="15dp"
+                                    android:paddingRight="15dp"
+                                    android:textColor="@color/black" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".1" />
+
+                                <TextView
+                                    android:id="@+id/tvTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/layout_gray_little_rounded_white_bg"
+                                    android:gravity="center_vertical"
+                                    android:hint="Time"
+                                    android:paddingLeft="15dp"
+                                    android:paddingRight="15dp"
+                                    android:textColor="@color/black" />
+
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/tvAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/layout_gray_little_rounded_white_bg"
+                                android:focusable="false"
+                                android:gravity="center_vertical"
+                                android:hint="Amount"
+                                android:imeOptions="actionNext"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                </android.support.constraint.ConstraintLayout>
+
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/settings_view"-->
+                    <!--android:layout_width="39dp"-->
+                    <!--android:layout_height="38dp"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:layout_marginTop="560dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--app:cardElevation="2dp"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintHorizontal_bias="0.991"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+                    <!--<android.support.constraint.ConstraintLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/imageView7"-->
+                    <!--android:layout_width="24dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--android:layout_marginBottom="2dp"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintHorizontal_bias="0.666"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:srcCompat="@drawable/settings_icon" />-->
+                    <!--</android.support.constraint.ConstraintLayout>-->
+
+
+                <!--</android.support.v7.widget.CardView>-->
+
+
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <!--Ends-->
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cardViewMove"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:visibility="gone"-->
+                <!--app:cardCornerRadius="7dp"-->
+                <!--app:cardElevation="7dp">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvMoov"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:background="@drawable/layout_primary_little_rounded_bg"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="MOOV"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="16dp" />-->
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvBookFutureRide"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Schedule a ride"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:textSize="15dp"-->
+                <!--android:visibility="gone" />-->
         </LinearLayout>
     </LinearLayout>
 
