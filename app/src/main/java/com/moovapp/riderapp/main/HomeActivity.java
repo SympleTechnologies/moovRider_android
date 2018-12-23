@@ -503,7 +503,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
                 llPaymentHistoryNav.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLite));
                 break;
             case "TalkToUsFragment":
-                tvTitle.setText("Talk To Us");
+                tvTitle.setText("Contact Us");
                 llTalkToUsNav.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLite));
                 break;
             case "SettingsFragment":

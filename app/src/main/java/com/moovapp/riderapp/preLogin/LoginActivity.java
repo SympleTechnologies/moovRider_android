@@ -308,7 +308,7 @@ public class LoginActivity extends LMTBaseActivity implements GoogleApiClient.On
         profileTracker.startTracking();
 
         loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
+        loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "gi"));
         loginButton.registerCallback(callbackManager, callback);
     }
 
@@ -325,6 +325,7 @@ public class LoginActivity extends LMTBaseActivity implements GoogleApiClient.On
 //            handleSignInResult(result);
             // The Task returned from this call is always completed, no need to attach
             // a listener.
+            //
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         } else {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,7 +64,7 @@ public class SettingsFragment extends LMTFragmentHelper {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.settings_fragment, container, false);
+        View view = inflater.inflate(R.layout.new_settings_fragment, container, false);
         ButterKnife.bind(this, view);
         myProgressDialog = new MyProgressDialog(getActivity());
         cd = new ConnectionDetector(getContext());
@@ -81,14 +82,13 @@ public class SettingsFragment extends LMTFragmentHelper {
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_reset_password);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setContentView(R.layout.new_forgot_password_dialog);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         final EditText edOldPassword = (EditText) dialog.findViewById(R.id.edOldPassword);
         final EditText edNewPassword = (EditText) dialog.findViewById(R.id.edNewPassword);
         final EditText edConfirmPassword = (EditText) dialog.findViewById(R.id.edConfirmPassword);
-        final TextView tvCancel = (TextView) dialog.findViewById(R.id.tvCancel);
-        final TextView tvOk = (TextView) dialog.findViewById(R.id.tvOk);
+        final ImageView tvCancel = dialog.findViewById(R.id.tvCancel);
+        final ImageView tvOk = dialog.findViewById(R.id.tvOk);
         tvOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,6 +127,7 @@ public class SettingsFragment extends LMTFragmentHelper {
         dialog.show();
     }
 
+    /*
     @OnClick(R.id.tvResetNumber)
     public void tvResetNumberClick() {
         final Dialog dialog = new Dialog(getContext());
@@ -160,6 +161,7 @@ public class SettingsFragment extends LMTFragmentHelper {
         });
         dialog.show();
     }
+    */
 
     private void showEnterOtpDialog() {
         final Dialog dialog = new Dialog(getContext());
@@ -198,13 +200,12 @@ public class SettingsFragment extends LMTFragmentHelper {
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_reset_email);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setContentView(R.layout.layout_new_reset_email_dialog);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         final EditText edOldEmail = (EditText) dialog.findViewById(R.id.edOldEmail);
         final EditText edNewEmail = (EditText) dialog.findViewById(R.id.edNewEmail);
-        final TextView tvCancel = (TextView) dialog.findViewById(R.id.tvCancel);
-        final TextView tvOk = (TextView) dialog.findViewById(R.id.tvOk);
+        final ImageView tvCancel = dialog.findViewById(R.id.tvCancel);
+        final ImageView tvOk = dialog.findViewById(R.id.tvOk);
         tvOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

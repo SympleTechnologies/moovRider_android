@@ -1,68 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="280dp"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@drawable/layout_primary_top_border_rounded_bg"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        android:textStyle="bold" />
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/contact_us_bg">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:padding="16dp"
         android:orientation="vertical">
-
         <TextView
-            android:id="@+id/tvMessage"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
-            android:text="message"
-            android:textSize="15dp"
-            android:textColor="@color/blackLite" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
+            android:text="Logout?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/tvTitle"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"/>
 
         <TextView
-            android:id="@+id/tvCancel"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="@string/cancel"
-            android:background="@drawable/layout_gray_bottom_left_border_rounded_bg"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/tvOk"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="@string/send"
-            android:background="@drawable/layout_primary_bottom_right_border_rounded_bg"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:id="@+id/tvMessage"
+            android:text="Message of alert dialog"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="56dp"
+                android:id="@+id/tvCancel"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/continue_btn"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"/>
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/tvOk"
+                android:src="@drawable/cancel"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"/>
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</android.support.v7.widget.CardView>

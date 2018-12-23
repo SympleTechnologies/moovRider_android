@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contact_us_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="32dp"
+            android:padding="16dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edt_bg"
+                android:padding="16dp"
+                android:id="@+id/edSubject"
+                android:hint="Name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edt_bg"
+                android:padding="16dp"
+                android:minHeight="140dp"
+                android:gravity="top|start|left"
+                android:layout_gravity="start|top|left"
+                android:layout_marginTop="16dp"
+                android:hint="Message"
+                android:id="@+id/edMessage"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SUBMIT"
+                android:id="@+id/tvSubmit"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_bg"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
