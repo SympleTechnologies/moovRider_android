@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.hbb20.CountryCodePicker;
 import com.moovapp.riderapp.R;
+import com.moovapp.riderapp.preLogin.Login;
 import com.moovapp.riderapp.preLogin.LoginActivity;
 import com.moovapp.riderapp.utils.AppPreferences;
 import com.moovapp.riderapp.utils.ConnectionDetector;
@@ -415,7 +416,7 @@ public class SettingsFragment extends LMTFragmentHelper {
         switch (apiCode) {
             case DIALOG_LOGOUT:
                 appPrefes.clearData();
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                Intent intent = new Intent(getActivity(), Login.class);
                 startActivity(intent);
                 getActivity().finish();
                 break;

@@ -138,7 +138,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
     private final int VIEW_CURRENT_RIDE_API = 9;
     private final int VIEW_PROFILE_API = 10;
 
-
+//
     @BindView(R.id.navigationView)
     NavigationView navigationView;
     @BindView(R.id.drawerLayout)
@@ -225,6 +225,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
 
     public static NotificationAction notificationAction;
 
+    private TextView welcomeText;
     private LinearLayout llMoovNav;
     private RelativeLayout llRidesNav;
     private LinearLayout llExpandedViewRides;
@@ -257,6 +258,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Users");
         setContentView(R.layout.home_activity);
+        welcomeText = findViewById(R.id.welcomeText);
         ButterKnife.bind(this);
         homeActivityActions = this;
         gpsTracker = new GPSTracker(getApplicationContext());
@@ -340,6 +342,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
                 Picasso.get().load(appPrefes.getData(Constants.USER_PROFILE_PIC)).placeholder(R.mipmap.user_placeholder).error(R.mipmap.user_placeholder).into(profileImage);
             }
             tvUserName.setText(appPrefes.getData(Constants.USER_FIRST_NAME));
+            welcomeText.setText("Hey, "+ appPrefes.getData(Constants.USER_FIRST_NAME));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -540,6 +543,7 @@ public class HomeActivity extends LMTBaseActivity implements HomeActivityActions
             if (appPrefes.getData(Constants.USER_PROFILE_PIC).length() > 3) {
                 Picasso.get().load(appPrefes.getData(Constants.USER_PROFILE_PIC)).placeholder(R.mipmap.user_placeholder).error(R.mipmap.user_placeholder).into(profileImage);
             }
+            welcomeText.setText("Hey, "+ appPrefes.getData(Constants.USER_FIRST_NAME));
             tvUserName.setText(appPrefes.getData(Constants.USER_FIRST_NAME));
         } catch (Exception e) {
             e.printStackTrace();

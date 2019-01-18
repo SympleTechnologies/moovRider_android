@@ -13,6 +13,7 @@ import com.moovapp.riderapp.utils.retrofit.responseModels.ListBanksResponseModel
 import com.moovapp.riderapp.utils.retrofit.responseModels.LoginEmailResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.PaymentResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.RegistartionResponseModel;
+import com.moovapp.riderapp.utils.retrofit.responseModels.RegisterModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.RequestOtpResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.RideSearchResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.SelectCollegeResponseModel;
@@ -38,6 +39,7 @@ import java.util.Map;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -54,6 +56,7 @@ public interface ApiInterface {
 
     @Multipart
     @POST("auth/register")
+//    Call<RegistartionResponseModel> register(@Body RegisterModel registerModel);
     Call<RegistartionResponseModel> register(@PartMap Map<String, RequestBody> params);
 
     @GET("auth/select_college")

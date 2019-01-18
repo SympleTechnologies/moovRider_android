@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.moovapp.riderapp.main.HomeActivity;
+import com.moovapp.riderapp.preLogin.Login;
 import com.moovapp.riderapp.preLogin.LoginActivity;
 import com.moovapp.riderapp.utils.Constants;
 import com.moovapp.riderapp.utils.LMTBaseActivity;
@@ -39,7 +40,7 @@ public class SplashScreenActivity extends LMTBaseActivity {
                     startActivity(intent);
                     finish();
                 }else {
-                    Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(SplashScreenActivity.this, Login.class);
                     startActivity(intent);
                     finish();
                 }

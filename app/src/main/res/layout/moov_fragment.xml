@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -32,117 +33,27 @@
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".85"
-            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="40dp"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:src="@mipmap/my_location_icon" />
-
-                    <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
-                        android:id="@+id/autoCompleteLocation"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:hint="Enter Location"
-                        android:imeOptions="actionNext"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:src="@mipmap/destination_location" />
-
-                    <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
-                        android:id="@+id/autoCompleteDestination"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:hint="Enter Destination"
-                        android:imeOptions="actionNext"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <CheckBox
-                android:id="@+id/cbPool"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <View
+                android:layout_alignParentTop="true"
+                android:id="@+id/anchor"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:checked="true"
-                android:gravity="center"
-                android:text="Do you want to pool the ride" />
+                android:layout_height="30dp"/>
+
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardViewNext"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="7dp"
-                app:cardElevation="7dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/layout_primary_little_rounded_bg"
-                    android:gravity="center"
-                    android:text="NEXT"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:layout_above="@id/cardViewMove"
                 android:id="@+id/cardViewRideDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="40dp"
-                android:visibility="gone"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -203,8 +114,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
-                        android:visibility="gone"
                         android:orientation="horizontal"
+                        android:visibility="gone"
                         android:weightSum="2.1">
 
                         <TextView
@@ -212,12 +123,12 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:background="@drawable/layout_gray_little_rounded_white_bg"
+                            android:gravity="center_vertical"
                             android:hint="Date"
-                            android:textColor="@color/black"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/layout_gray_little_rounded_white_bg" />
+                            android:textColor="@color/black" />
 
                         <View
                             android:layout_width="0dp"
@@ -229,12 +140,12 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:background="@drawable/layout_gray_little_rounded_white_bg"
+                            android:gravity="center_vertical"
                             android:hint="Time"
                             android:paddingLeft="15dp"
-                            android:textColor="@color/black"
                             android:paddingRight="15dp"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/layout_gray_little_rounded_white_bg" />
+                            android:textColor="@color/black" />
 
                     </LinearLayout>
 
@@ -254,27 +165,182 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
+
             <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:layout_above="@id/locations"
                 android:id="@+id/cardViewMove"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                app:cardBackgroundColor="@color/buttons"
                 android:layout_marginTop="20dp"
-                android:visibility="gone"
-                app:cardCornerRadius="7dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="7dp">
 
                 <TextView
                     android:id="@+id/tvMoov"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:background="@drawable/layout_primary_little_rounded_bg"
                     android:gravity="center"
                     android:text="MOOV"
                     android:textColor="@color/white"
                     android:textSize="16dp" />
             </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_margin="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_alignParentBottom="true"
+                app:cardBackgroundColor="@color/white"
+                android:id="@+id/locations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/welcomeText"
+                        android:fontFamily="@font/lato_regular"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginRight="22dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/grayDark"
+                        android:text="Hey Felix"/>
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginRight="22dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/lato_black"
+                        android:text="Where are you going?"/>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_search" />
+
+                            <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                android:maxLines="1"
+                                android:inputType="textCapSentences"
+                                android:id="@+id/autoCompleteDestination"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:hint="Enter Destination"
+                                android:dropDownAnchor="@id/anchor"
+                                android:imeOptions="actionNext"
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="10dp"
+                                android:src="@mipmap/my_location_icon" />
+
+                            <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                android:maxLines="1"
+                                android:inputType="textCapSentences"
+                                android:id="@+id/autoCompleteLocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:hint="Enter Location"
+                                android:dropDownAnchor="@id/anchor"
+                                android:dropDownHeight="800dp"
+                                android:imeOptions="actionNext"
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+
+                    <CheckBox
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/cbPool"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:checked="true"
+                        android:text="Do you want to pool the ride" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardViewNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        app:cardBackgroundColor="@color/buttons"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="7dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="NEXT"
+                            android:textColor="@color/white"
+                            android:textSize="16dp" />
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
 
             <TextView
                 android:id="@+id/tvBookFutureRide"
@@ -287,7 +353,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="15dp"
                 android:layout_marginTop="10dp"/>
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
     <include

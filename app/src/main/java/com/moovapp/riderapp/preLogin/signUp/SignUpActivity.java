@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.hbb20.CountryCodePicker;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -32,6 +33,7 @@ import com.moovapp.riderapp.utils.retrofit.ApiClient;
 import com.moovapp.riderapp.utils.retrofit.ApiInterface;
 import com.moovapp.riderapp.utils.retrofit.responseModels.CheckEmailResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.RegistartionResponseModel;
+import com.moovapp.riderapp.utils.retrofit.responseModels.RegisterModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.SelectCollegeResponseModel;
 import com.moovapp.riderapp.utils.retrofit.responseModels.SelectUserTypeResponseModel;
 import com.moovapp.riderapp.utils.spinnerAdapter.WhiteSpinnerAdapter;
@@ -354,7 +356,7 @@ public class SignUpActivity extends LMTBaseActivity implements Validator.Validat
                 myProgressDialog.setProgress(false);
                 ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                 Map<String, RequestBody> map = new HashMap<>();
-
+                Log.d("maps", "callRegisterApi: "+ edFirstName.getText().toString());
                 RequestBody f_name = RequestBody.create(MediaType.parse("text/plain"), edFirstName.getText().toString());
                 map.put("f_name", f_name);
                 RequestBody l_name = RequestBody.create(MediaType.parse("text/plain"), edLastName.getText().toString());
@@ -363,49 +365,72 @@ public class SignUpActivity extends LMTBaseActivity implements Validator.Validat
                 map.put("email", email);
                 RequestBody password = RequestBody.create(MediaType.parse("text/plain"), edPassword.getText().toString());
                 map.put("password", password);
-
+                Log.d("maps", "callRegisterApi: "+ edPassword.getText().toString());
                 RequestBody college = RequestBody.create(MediaType.parse("text/plain"), selectedCollegeId);
+                Log.d("maps", "callRegisterApi: "+ selectedCollegeId);
                 map.put("college", college);
                 RequestBody user_type = RequestBody.create(MediaType.parse("text/plain"), selectedUserId);
+                Log.d("maps", "callRegisterApi: "+ selectedUserId);
                 map.put("user_type", user_type);
+                Log.d("maps", "callRegisterApi: "+ user_type);
 
                 String cCode = codePicker.getSelectedCountryCode();
                 if (!cCode.contains("+")) {
                     cCode = "+" + cCode;
                 }
                 RequestBody phone_country = RequestBody.create(MediaType.parse("text/plain"), cCode);
+                Log.d("maps", "cCode: "+ cCode);
                 map.put("phone_country", phone_country);
+                Log.d("maps", "phone_country: "+ phone_country);
+                Log.d("maps", "phone: "+ edPhoneNumber.getText().toString());
                 RequestBody phone = RequestBody.create(MediaType.parse("text/plain"), edPhoneNumber.getText().toString());
                 map.put("phone", phone);
 
                 RequestBody gender = RequestBody.create(MediaType.parse("text/plain"), "");
                 map.put("gender", gender);
                 RequestBody auth_mode = RequestBody.create(MediaType.parse("text/plain"), authModeStr);
+                Log.d("maps", "authModeStr: "+ authModeStr);
                 map.put("auth_mode", auth_mode);
                 RequestBody auth_provider = RequestBody.create(MediaType.parse("text/plain"), socialLoginType);
                 map.put("auth_provider", auth_provider);
+                Log.d("maps", "callRegisterApi: "+ socialLoginType);
                 RequestBody auth_uid = RequestBody.create(MediaType.parse("text/plain"), socialLoginId);
+                Log.d("maps", "callRegisterApi: "+ socialLoginId);
                 map.put("auth_uid", auth_uid);
-
+                Log.d("maps", "callRegisterApi: "+ auth_uid);
                 RequestBody device_type = RequestBody.create(MediaType.parse("text/plain"), "android");
                 map.put("device_type", device_type);
                 RequestBody device_id = RequestBody.create(MediaType.parse("text/plain"), appPrefes.getData(Constants.DEVICE_TOKEN));
-                map.put("device_id", device_id);
+                Log.d("maps", "device_id: "+ appPrefes.getData(Constants.DEVICE_TOKEN));
+                Log.d("maps", "auth_uid: "+ auth_uid);
+                map.put("device", device_id);
                 RequestBody push_token = RequestBody.create(MediaType.parse("text/plain"), appPrefes.getData(Constants.DEVICE_TOKEN));
                 map.put("push_token", push_token);
+                Log.d("maps", "auth_uid: "+ auth_uid);
+                Log.d("maps", "appPrefes.getData(Constants.DEVICE_TOKEN "+ appPrefes.getData(Constants.DEVICE_TOKEN));
                 RequestBody app_version = RequestBody.create(MediaType.parse("text/plain"), "2.0");
                 map.put("app_version", app_version);
+
+
 
                 if (registrationType.equals("Social")) {
                     RequestBody image = RequestBody.create(MediaType.parse("text/plain"), profilePic);
                     map.put("image", image);
+                    Log.d("maps", "auth_uid: "+ profilePic);
                 }
+
+                Gson gson = new Gson();
+                String json = gson.toJson(map);
+
+
+                Log.d("Json", "callRegisterApi: "+json.toString());
 
                 Call<RegistartionResponseModel> call = apiService.register(map);
                 call.enqueue(new Callback<RegistartionResponseModel>() {
                     @Override
                     public void onResponse(Call<RegistartionResponseModel> call, Response<RegistartionResponseModel> response) {
                         myProgressDialog.dismissProgress();
+//                        Log.e("response", "onResponse: "+response.body().isStatus() );
                         try {
                             if (!response.body().isStatus()) {
                                 Toast.makeText(getBaseContext(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -493,6 +518,7 @@ public class SignUpActivity extends LMTBaseActivity implements Validator.Validat
                         myProgressDialog.dismissProgress();
                         try {
                             if (!response.body().isStatus()) {
+                                // TODO: 1/9/2019 better error catching
                                 if (response.body().getMessage().contains("Email")) {
                                     llAlreadyHaveAccount.setVisibility(View.VISIBLE);
                                     layoutOne.setVisibility(View.VISIBLE);

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bck"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="5"
+        android:layout_alignParentLeft="true">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:src="@mipmap/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="3.5"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".8"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:padding="32dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="moov"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="17dp"
+                    app:cardElevation="4dp">
+
+
+                    <TextView
+                        android:id="@+id/tvSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="SIGN IN"
+                        android:textColor="#FF1493"
+                        android:textSize="15sp" />
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="#FF1493"
+                    app:cardCornerRadius="17dp"
+                    app:cardElevation="4dp">
+
+
+                    <TextView
+                        android:id="@+id/tvSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_create_account"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="CREATE A NEW ACCOUNT"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:src="@drawable/ic_create_account" />-->
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tvSignIn"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_margin="10dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="CREATE A NEW ACCOUNT"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="15sp" />-->
+
+
+                    <!--</LinearLayout>-->
+
+                </android.support.v7.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:weightSum="5">
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <com.facebook.login.widget.LoginButton
+                            android:visibility="visible"
+                            android:id="@+id/login_button"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            style="@style/com_facebook_login_new"/>
+
+                        <ImageView
+                            android:id="@+id/fcbkImgView"
+                            android:layout_centerVertical="true"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/facebook_circle"/>
+
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight=".5"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+                    <ImageView
+                        android:id="@+id/sign_in_button"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:src="@drawable/google_transparent"/>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

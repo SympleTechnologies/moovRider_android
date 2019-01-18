@@ -141,6 +141,7 @@ public class LMTBaseActivity extends AppCompatActivity implements NetworkChangeR
     }
 
     public void retryApiCall(int apiCode) {
+        // TODO: 1/9/2019 retry api code
 
     }
 

@@ -10,6 +10,7 @@
     <color name="whiteLite">#f2eded</color>
     <color name="whiteTransparent">#55f2eded</color>
     <color name="black">#000000</color>
+    <color name="whiteGray">#F7F7FA</color>
     <color name="blackLite">#494949</color>
     <color name="gray">#c2c2c2</color>
     <color name="grayLite">#dcdcdc</color>
@@ -27,6 +28,7 @@
     <color name="green">#20b137</color>
     <color name="colorPrimaryLite">#77ee3469</color>
     <color name="pink">#ef466e</color>
+    <color name="buttons">#F21466</color>
 
     <color name="colorRouteLine">#2162fc</color>
 </resources>

@@ -143,13 +143,22 @@ public class SocialLoginResponseModel {
                 this.u_image = u_image;
             }
 
-            public WalletBalanceEntity getWallet_balance() {
-                return wallet_balance;
-            }
+//
+//            public double getWallet_balance(){
+//                return wallet_balance;
+//            }
+//
+//            public void setWallet_balance(double wallet_balance) {
+//                this.wallet_balance = wallet_balance;
+//            }
 
-            public void setWallet_balance(WalletBalanceEntity wallet_balance) {
-                this.wallet_balance = wallet_balance;
-            }
+//            public WalletBalanceEntity getWallet_balance() {
+//                return wallet_balance;
+//            }
+
+//            public void setWallet_balance(WalletBalanceEntity wallet_balance) {
+//                this.wallet_balance = wallet_balance;
+//            }
 
             public static class WalletBalanceEntity {
                 /**

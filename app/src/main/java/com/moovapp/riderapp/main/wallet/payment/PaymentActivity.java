@@ -152,7 +152,8 @@ public class PaymentActivity extends LMTBaseActivity {
             public void onError(Throwable error, Transaction transaction) {
                 //handle error here
                 myProgressDialog.dismissProgress();
-                Toast.makeText(PaymentActivity.this, "Error" + transaction, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PaymentActivity.this, "Error" + error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PaymentActivity.this, "Error" + transaction.getReference(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -215,6 +216,7 @@ public class PaymentActivity extends LMTBaseActivity {
                                 accessCode = response.body().getData().getAccess_code();
                                 reference = response.body().getData().getReference();
                                 myProgressDialog.setProgress(false);
+
                                 performCharge();
                             } else {
                                 Toast.makeText(PaymentActivity.this, "Error initiating payment gateway", Toast.LENGTH_SHORT).show();
@@ -229,7 +231,8 @@ public class PaymentActivity extends LMTBaseActivity {
                     @Override
                     public void onFailure(Call<InitPaymentResponseModel> call, Throwable t) {
                         myProgressDialog.dismissProgress();
-                        System.out.println("t.toString : " + t.toString());
+                        Toast.makeText(PaymentActivity.this, "not working", Toast.LENGTH_SHORT).show();
+                        System.out.println("t.toString : " + t.getLocalizedMessage());
                         showServerErrorAlert(INIT_PAYMENT_API);
                     }
                 });

@@ -18,6 +18,17 @@ public class SelectCollegeResponseModel {
     private boolean status;
     private DataEntity data;
     private String message;
+
+    @Override
+    public String toString() {
+        return "SelectCollegeResponseModel{" +
+                "status=" + status +
+                ", data=" + data.toString() +
+                ", message='" + message + '\'' +
+                ", links=" + links.toString() +
+                '}';
+    }
+
     private LinksEntity links;
 
     public boolean isStatus() {

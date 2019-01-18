@@ -34,63 +34,62 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    compile 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.android.support:support-v4:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    //Firebase
-    compile 'com.google.firebase:firebase-core:16.0.0'
     //Calligraphy
-    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     //Butterknife
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //Circular Image View
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     //CardView
-    compile 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
     //L design support
-    compile 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
     //Country code picker
     implementation 'com.hbb20:ccp:2.2.0'
     //multidex
-    compile 'com.android.support:multidex:1.0.0'
+    implementation 'com.android.support:multidex:1.0.0'
     //Rating bar
-    compile 'com.github.ornolfr:rating-view:0.1.1@aar'
+    implementation 'com.github.ornolfr:rating-view:0.1.1@aar'
     // retrofit, gson
-    compile 'com.google.code.gson:gson:2.6.2'
-    compile 'com.squareup.retrofit2:retrofit:2.0.2'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
     //Edittext validator
-    compile 'com.mobsandgeeks:android-saripaar:2.0.2'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.2'
     //Paystack
-    compile 'co.paystack.android:paystack:3.0.10'
+    implementation 'co.paystack.android:paystack:3.0.10'
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
     //Image Picker
-    compile 'com.github.myinnos:AwesomeImagePicker:1.0.2'
+    implementation 'com.github.myinnos:AwesomeImagePicker:1.0.2'
     //Image Crop
-    compile 'com.github.yalantis:ucrop:2.2.1-native'
+    implementation 'com.github.yalantis:ucrop:2.2.1-native'
     //compressor
-    compile 'id.zelory:compressor:2.1.0'
+    implementation 'id.zelory:compressor:2.1.0'
     //Facebook Sdk
-    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.0.0'
     /*Google play*/
-    compile 'com.google.android.gms:play-services-auth:9.0.0'
-    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.mcxiaoke.volley:library-aar:1.0.0'
     //FCM
-    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
     //Google Map
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
     //DatePicker
-    compile 'com.wdullaer:materialdatetimepicker:3.6.3'
+    implementation 'com.wdullaer:materialdatetimepicker:3.6.3'
     //Firebase
-    implementation 'com.google.firebase:firebase-core:16.0.3'
-    implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.5'
     //Draw On Map
-    compile 'com.github.ar-android:DrawRouteMaps:1.0.0'
+    implementation 'com.github.ar-android:DrawRouteMaps:1.0.0'
 
-    compile 'com.google.maps.android:android-maps-utils:0.5'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
 }
 apply plugin: 'com.google.gms.google-services'
