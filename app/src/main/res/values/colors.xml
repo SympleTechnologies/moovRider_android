@@ -3,15 +3,20 @@
     <color name="colorPrimary">#ee3469</color>
     <color name="colorPrimaryDark">#ed1368</color>
     <color name="colorAccent">#f1666a</color>
-
+<!--f8f8ff-->
     <color name="bg">#f6f6f6</color>
     <color name="transparent">#00000000</color>
+    <color name="semi_transparent_white">#33FFFFFF</color>
     <color name="white">#FFFFFF</color>
-    <color name="whiteLite">#f2eded</color>
+    <color name="translucent">#99f8f8f6</color>
+    <color name="whiteLite">#70f2eded</color>
     <color name="whiteTransparent">#55f2eded</color>
+    <color name="milk_transparent">#85fafcfb</color>
+    <color name="lighter_black">#423751</color>
     <color name="black">#000000</color>
     <color name="whiteGray">#F7F7FA</color>
     <color name="blackLite">#494949</color>
+    <color name="semi_transparent">#97fafaff</color>
     <color name="gray">#c2c2c2</color>
     <color name="grayLite">#dcdcdc</color>
     <color name="grayLitest">#e9e8e8</color>
@@ -26,9 +31,14 @@
     <color name="yellow">#fedd00</color>
     <color name="orange">#ff7513</color>
     <color name="green">#20b137</color>
-    <color name="colorPrimaryLite">#77ee3469</color>
+    <color name="colorPrimaryLite">#77EB789C</color>
     <color name="pink">#ef466e</color>
     <color name="buttons">#F21466</color>
+    <color name="grey_white">#ECEFF1</color>
+    <color name="blackLight">#969090</color>
+
 
     <color name="colorRouteLine">#2162fc</color>
+    <color name="search_results_color">#F7F7FA</color>
+    <color name="light_gray_color">#D9DBE1</color>
 </resources>

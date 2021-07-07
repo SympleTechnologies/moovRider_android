@@ -59,7 +59,24 @@ public class LoginEmailResponseModel {
          * user_pic_url_100 : http://themoovapp.com/manage/uploads/userpic/croped/100/.png
          * user_pic_url_200 : http://themoovapp.com/manage/uploads/userpic/croped/200/.png
          */
+        public String getInstitution_name() {
+            return institution_name;
+        }
 
+        public void setInstitution_name(String institution_name) {
+            this.institution_name = institution_name;
+        }
+
+        public int getInstitution_id() {
+            return institution_id;
+        }
+
+        public void setInstitution_id(int institution_id) {
+            this.institution_id = institution_id;
+        }
+
+        private String institution_name;
+        private int institution_id;
         private UserDetailsEntity user_details;
         private String access_token;
         private String user_pic_url;
@@ -113,6 +130,25 @@ public class LoginEmailResponseModel {
              * u_image : .png
              * wallet_balance : 0
              */
+
+            public String getInstitution_name() {
+                return institution_name;
+            }
+
+            public void setInstitution_name(String institution_name) {
+                this.institution_name = institution_name;
+            }
+
+            public int getInstitution_id() {
+                return institution_id;
+            }
+
+            public void setInstitution_id(int institution_id) {
+                this.institution_id = institution_id;
+            }
+
+            private String institution_name;
+            private int institution_id;
 
             private int u_id;
             private String u_first_name;

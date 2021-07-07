@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--120700495894-hgifk4rii1op97vvo972otberrdmj8c6.apps.googleusercontent.com-->
 
     <application
         android:name=".Application"
@@ -17,6 +19,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".main.TestLayout"></activity>
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +57,6 @@
         <meta-data
             android:name="co.paystack.android.PublicKey"
             android:value="pk_test_1544ffee69407a91be7cece08566ea4ca1343126" />
-        //FB
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -62,9 +64,7 @@
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
-
-        <!-- Defining Services -->
+            android:label="@string/app_name" /> <!-- Defining Services -->
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -78,9 +78,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDsmAUKdNSJosSziRHpxmITHsoyrmOQRiI" />
-
-        <!-- &lt;!&ndash; Set custom default icon. This is used when no icon is set for incoming notification messages. -->
+            android:value="AIzaSyDsmAUKdNSJosSziRHpxmITHsoyrmOQRiI" /> <!-- &lt;!&ndash; Set custom default icon. This is used when no icon is set for incoming notification messages. -->
         <!-- See README(https://goo.gl/l4GJaQ) for more. &ndash;&gt; -->
         <!-- <meta-data -->
         <!-- android:name="com.google.firebase.messaging.default_notification_icon" -->
@@ -90,14 +88,15 @@
         <!-- <meta-data -->
         <!-- android:name="com.google.firebase.messaging.default_notification_color" -->
         <!-- android:resource="@color/colorAccent" /> -->
-
-
         <!-- <meta-data -->
         <!-- android:name="com.google.firebase.messaging.default_notification_channel_id" -->
         <!-- android:value="@string/default_notification_channel_id"/> -->
-        <activity android:name=".preLogin.Login"></activity>
+        <activity android:name=".preLogin.Login" />
         <activity android:name=".preLogin.SignInSignUp" />
-        <activity android:name=".TestAutocomplete"></activity>
+        <activity android:name=".TestAutocomplete" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6fec05db82847b9cf4522e662109ded89ccf47c9" />
     </application>
 
 </manifest>

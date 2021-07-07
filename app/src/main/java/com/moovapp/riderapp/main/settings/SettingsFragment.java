@@ -193,47 +193,47 @@ public class SettingsFragment extends LMTFragmentHelper {
         dialog.show();
 
     }
-
-    @OnClick(R.id.tvResetEmail)
-    public void tvResetEmailClick() {
-        final Dialog dialog = new Dialog(getContext());
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_reset_email);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        final EditText edOldEmail = (EditText) dialog.findViewById(R.id.edOldEmail);
-        final EditText edNewEmail = (EditText) dialog.findViewById(R.id.edNewEmail);
-        final TextView tvCancel = (TextView) dialog.findViewById(R.id.tvCancel);
-        final TextView tvOk = (TextView) dialog.findViewById(R.id.tvOk);
-        tvOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean isAllOkay = true;
-                if (edOldEmail.getText().toString().trim().length() < 1) {
-                    isAllOkay = false;
-                    edOldEmail.setError("This field is required!");
-                }
-                if (edNewEmail.getText().toString().trim().length() < 1) {
-                    isAllOkay = false;
-                    edNewEmail.setError("This field is required!");
-                }
-                if (isAllOkay) {
-                    oldEmail = edOldEmail.getText().toString();
-                    newEmail = edNewEmail.getText().toString();
-                    callEditEmailApi();
-                    dialog.dismiss();
-                }
-            }
-        });
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        dialog.show();
-    }
+//
+//    @OnClick(R.id.tvResetEmail)
+//    public void tvResetEmailClick() {
+//        final Dialog dialog = new Dialog(getContext());
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.setCancelable(false);
+//        dialog.setContentView(R.layout.dialog_reset_email);
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        final EditText edOldEmail = (EditText) dialog.findViewById(R.id.edOldEmail);
+//        final EditText edNewEmail = (EditText) dialog.findViewById(R.id.edNewEmail);
+//        final TextView tvCancel = (TextView) dialog.findViewById(R.id.tvCancel);
+//        final TextView tvOk = (TextView) dialog.findViewById(R.id.tvOk);
+//        tvOk.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                boolean isAllOkay = true;
+//                if (edOldEmail.getText().toString().trim().length() < 1) {
+//                    isAllOkay = false;
+//                    edOldEmail.setError("This field is required!");
+//                }
+//                if (edNewEmail.getText().toString().trim().length() < 1) {
+//                    isAllOkay = false;
+//                    edNewEmail.setError("This field is required!");
+//                }
+//                if (isAllOkay) {
+//                    oldEmail = edOldEmail.getText().toString();
+//                    newEmail = edNewEmail.getText().toString();
+//                    callEditEmailApi();
+//                    dialog.dismiss();
+//                }
+//            }
+//        });
+//        tvCancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialog.dismiss();
+//            }
+//        });
+//        dialog.show();
+//    }
 
     private void callEditEmailApi() {
         if (cd.isConnectingToInternet()) {

@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -83,8 +84,8 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
     private static final int ASK_CAMERA_WRITE_PERMISSION = 9;
     private static final int PROFILE_EDIT_SUCCESS_DIALOG = 11;
 
-    @BindView(R.id.cardViewEdit)
-    CardView cardViewEdit;
+//    @BindView(R.id.cardViewEdit)
+//    CardView cardViewEdit;
     @BindView(R.id.tvSubmit)
     TextView tvSubmit;
     @NotEmpty(trim = true)
@@ -109,7 +110,6 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
     TextView tvTitle;
     @BindView(R.id.profileImage)
     CircleImageView profileImage;
-
     private File imageFile;
     private File compressedImageFile;
     private String selectedImagePath = "";
@@ -174,7 +174,7 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
     private void disableEditing() {
         tvTitle.setText("Profile");
         isInEditMode = false;
-        cardViewEdit.setVisibility(View.VISIBLE);
+//        cardViewEdit.setVisibility(View.VISIBLE);
         tvSubmit.setVisibility(View.GONE);
         edFirstName.setClickable(false);
         edFirstName.setFocusable(false);
@@ -190,30 +190,30 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
         edPhoneNumber.setFocusable(false);
     }
 
-    @OnClick(R.id.cardViewEdit)
-    public void cardViewEditClick() {
-        tvTitle.setText("Edit Profile");
-        isInEditMode = true;
-        cardViewEdit.setVisibility(View.GONE);
-        tvSubmit.setVisibility(View.VISIBLE);
-        edFirstName.setClickable(true);
-        edFirstName.setFocusable(true);
-        edFirstName.setFocusableInTouchMode(true);
-        edLastName.setClickable(true);
-        edLastName.setFocusable(true);
-        edLastName.setFocusableInTouchMode(true);
-        llUniversity.setVisibility(View.GONE);
-        rlSpinnerUniversity.setVisibility(View.VISIBLE);
-//        edEmail.setClickable(true);
-//        edEmail.setFocusable(true);
-//        edEmail.setFocusableInTouchMode(true);
-//        edUniversity.setClickable(true);
-//        edUniversity.setFocusable(true);
-//        edUniversity.setFocusableInTouchMode(true);
-//        edPhoneNumber.setClickable(true);
-//        edPhoneNumber.setFocusable(true);
-//        edPhoneNumber.setFocusableInTouchMode(true);
-    }
+//    @OnClick(R.id.cardViewEdit)
+//    public void cardViewEditClick() {
+//        tvTitle.setText("Edit Profile");
+//        isInEditMode = true;
+//        cardViewEdit.setVisibility(View.GONE);
+//        tvSubmit.setVisibility(View.VISIBLE);
+//        edFirstName.setClickable(true);
+//        edFirstName.setFocusable(true);
+//        edFirstName.setFocusableInTouchMode(true);
+//        edLastName.setClickable(true);
+//        edLastName.setFocusable(true);
+//        edLastName.setFocusableInTouchMode(true);
+//        llUniversity.setVisibility(View.GONE);
+//        rlSpinnerUniversity.setVisibility(View.VISIBLE);
+////        edEmail.setClickable(true);
+////        edEmail.setFocusable(true);
+////        edEmail.setFocusableInTouchMode(true);
+////        edUniversity.setClickable(true);
+////        edUniversity.setFocusable(true);
+////        edUniversity.setFocusableInTouchMode(true);
+////        edPhoneNumber.setClickable(true);
+////        edPhoneNumber.setFocusable(true);
+////        edPhoneNumber.setFocusableInTouchMode(true);
+//    }
 
     private void setCollegeSpinner() {
         collegeList = new ArrayList<>();
@@ -246,8 +246,8 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
         if (data.getUser_pic_url().trim().length() > 3) {
             Picasso.get().load(data.getUser_pic_url()).placeholder(R.mipmap.user_placeholder).error(R.mipmap.user_placeholder).into(profileImage);
         }
-        edFirstName.setText(data.getUser_details().getFirst_name());
-        edLastName.setText(data.getUser_details().getLast_name());
+        edFirstName.setText(data.getUser_details().getFirst_name()+ " " + data.getUser_details().getLast_name() );
+//        edLastName.setText();
         edEmail.setText(data.getUser_details().getEmail());
         edUniversity.setText(data.getUser_details().getInstitution_name());
         edPhoneNumber.setText(data.getUser_details().getPhone_country() + data.getUser_details().getPhone());
@@ -465,6 +465,7 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
                                 appPrefes.SaveData(Constants.USER_UNIVERSITY, response.body().getData().getUser_details().getInstitution_name());
                                 appPrefes.SaveData(Constants.USER_UNIVERSITY_ID, response.body().getData().getUser_details().getInstitution_id()+"");
                                 setValues(response.body().getData());
+                                Log.d("profile", "onResponse: "+response.body().getData().getUser_pic_url());
                                 callListCollegesApi();
                             } else {
                                 showServerErrorAlert(VIEW_PROFILE_API);
@@ -502,15 +503,17 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
                 Map<String, RequestBody> map = new HashMap<>();
                 if (imageFile != null) {
                     RequestBody file = RequestBody.create(MediaType.parse("image/*"), imageFile);
-                    map.put("image\"; filename=\"LIJOGAL" + i1 + ".jpg\" ", file);
+                    map.put("image\"; filename=\"profile_image" + i1 + ".jpg\" ", file);
                 } else {
                     RequestBody jobseekerImage = RequestBody.create(MediaType.parse("text/plain"), "");
                     map.put("image", jobseekerImage);
                 }
-                RequestBody userid = RequestBody.create(MediaType.parse("text/plain"), appPrefes.getData(Constants.USER_ID));
-                map.put("userid", userid);
+//                RequestBody userid = RequestBody.create(MediaType.parse("text/plain"), appPrefes.getData(Constants.USER_ID));
+//                map.put("userid", userid);
 
-                Call<UpdateProfilePicResponseModel> call = apiService.updateProfilePic(map);
+                Call<UpdateProfilePicResponseModel> call = apiService.updateProfilePic(appPrefes.getData(Constants.USER_ID) , map);
+
+                Log.d("profile", "callUpdateProfilePicApi: "+ map.toString());
                 call.enqueue(new Callback<UpdateProfilePicResponseModel>() {
                     @Override
                     public void onResponse(Call<UpdateProfilePicResponseModel> call, Response<UpdateProfilePicResponseModel> response) {
@@ -529,6 +532,8 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
                         } catch (Exception e) {
                             e.printStackTrace();
                             showServerErrorAlert(UPDATE_PROFILE_PIC_API);
+                            Log.d("profilerespr", "callUpdateProfilePicApi: "+ response.raw());
+                            Log.d("profilerepe", "callUpdateProfilePicApi: "+ e.toString());
                         }
                     }
 
@@ -537,6 +542,7 @@ public class ProfileActivity extends LMTBaseActivity implements Validator.Valida
                         myProgressDialog.dismissProgress();
                         System.out.println("t.toString : " + t.toString());
                         showServerErrorAlert(UPDATE_PROFILE_PIC_API);
+                        Log.d("profilef", "callUpdateProfilePicApi: "+ t.toString());
                     }
                 });
             } catch (Exception e) {

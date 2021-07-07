@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -26,96 +29,282 @@
     <!--android:scaleType="centerCrop"-->
     <!--android:src="@mipmap/map_bg" />-->
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:orientation="vertical"
+        >
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvSearch"-->
+        <!--android:visibility="invisible"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:textColor="@color/grey_white"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Search Results"/>-->
+
 
 
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <View
-                android:layout_alignParentTop="true"
-                android:id="@+id/anchor"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+            android:layout_height="wrap_content">
 
 
-            <android.support.v7.widget.CardView
-                android:visibility="gone"
-                android:layout_above="@id/cardViewMove"
+
+
+            <LinearLayout
+               android:visibility="gone"
+                android:layout_alignParentBottom="true"
+                android:padding="10dp"
                 android:id="@+id/cardViewRideDetails"
+                android:background="@drawable/card_view_corner_white"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
+                <android.support.v7.widget.CardView
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <Spinner
-                        android:id="@+id/spinnerUniversity"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@drawable/layout_gray_little_rounded_white_bg"
-                        android:gravity="center_vertical"
-                        android:hint="University"
-                        android:imeOptions="actionNext"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center_vertical"
-                            android:text="No of seats" />
-
-                        <Spinner
-                            android:id="@+id/spinnerSeats"
-                            android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:layout_alignParentRight="true"
-                            android:background="@drawable/layout_gray_little_rounded_white_bg"
-                            android:gravity="center_vertical"
-                            android:hint="University"
-                            android:imeOptions="actionNext"
-                            android:paddingLeft="15dp"
-                            android:paddingRight="15dp"
-                            android:textColor="@color/black" />
-
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="40dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="7dp"
-                            android:src="@mipmap/down_arrow" />
-                    </RelativeLayout>
+                    android:layout_height="match_parent">
 
                     <LinearLayout
+                        android:weightSum="6"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:padding="6dp"
+                            android:layout_weight=".5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_marginLeft="8dp"
+                                android:src="@drawable/left"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:layout_weight="5.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:background="@color/white"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:id="@+id/changLocationLayout"
+                                    android:weightSum="6"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_weight="5"
+                                        android:orientation="vertical"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent">
+                                        <TextView
+                                            android:paddingTop="8dp"
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_marginRight="4dp"
+                                            android:textSize="9sp"
+                                            android:textColor="#b9b9bb"
+                                            android:layout_width="wrap_content"
+                                            android:text="@string/dummy_pickup"
+                                            android:layout_height="wrap_content" />
+                                        <TextView
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_marginRight="4dp"
+                                            android:id="@+id/tvLocationName"
+                                            android:layout_width="match_parent"
+                                            tools:text="@string/dummy_location"
+                                            android:maxLines="1"
+                                            android:textStyle="bold"
+                                            android:fontFamily="@font/lato_black"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <!--<LinearLayout-->
+                                        <!--android:layout_margin="5dp"-->
+                                        <!--android:gravity="center_horizontal|center_vertical"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="match_parent">-->
+
+                                        <!--<ImageView-->
+                                            <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                                            <!--android:id="@+id/changeLocation"-->
+                                            <!--android:layout_margin="4dp"-->
+                                            <!--android:background="#0000"-->
+                                            <!--android:src="@drawable/ic_add"-->
+                                            <!--android:layout_width="20dp"-->
+                                            <!--android:layout_height="match_parent" />-->
+                                    <!--</LinearLayout>-->
+
+
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_marginBottom="4dp"
+                                android:background="@color/white"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:weightSum="6"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_weight="5.7"
+                                        android:orientation="vertical"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent">
+                                        <View
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_marginRight="4dp"
+                                            android:layout_marginBottom="1dp"
+                                            android:layout_marginTop="3dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height=".5dp"
+                                            android:background="@color/gray"/>
+
+                                    </LinearLayout>
+
+
+
+
+
+                                    <!--<ImageView-->
+                                    <!--android:id="@+id/changeDestination"-->
+                                    <!--android:layout_margin="4dp"-->
+                                    <!--android:layout_gravity="center"-->
+                                    <!--android:background="#0000"-->
+                                    <!--android:src="@drawable/ic_edit_new"-->
+                                    <!--android:layout_width="30dp"-->
+                                    <!--android:layout_height="30dp" />-->
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/changeDestinationLayout"
+                        android:layout_marginBottom="4dp"
+                        android:background="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:weightSum="6"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginTop="6dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_weight="5"
+                                        android:orientation="vertical"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent">
+                                        <TextView
+                                            android:paddingTop="4dp"
+                                            android:textSize="9sp"
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_marginRight="4dp"
+                                            android:textColor="#b9b9bb"
+                                            android:layout_width="wrap_content"
+                                            android:text="Destination Location"
+                                            android:layout_height="wrap_content" />
+                                        <TextView
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_marginRight="4dp"
+                                            android:id="@+id/tvDestinationName"
+                                            android:maxLines="1"
+                                            android:layout_width="match_parent"
+                                            tools:text="Name Of Destination"
+                                            android:textStyle="bold"
+                                            android:fontFamily="@font/lato_black"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_weight=".5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/changeDestination"
+                                            android:layout_gravity="left|center_vertical"
+                                            android:background="#0000"
+                                            android:src="@drawable/ic_edit_new"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:background="@drawable/border_gray"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:visibility="gone"
                         android:id="@+id/llFutureRideDetails"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
                         android:orientation="horizontal"
-                        android:visibility="gone"
                         android:weightSum="2.1">
 
                         <TextView
@@ -148,57 +337,406 @@
                             android:textColor="@color/black" />
 
                     </LinearLayout>
+                </android.support.v7.widget.CardView>
 
-                    <EditText
-                        android:id="@+id/tvAmount"
+                <android.support.v7.widget.CardView
+                    android:background="@drawable/border_gray"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:weightSum="8"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/layout_gray_little_rounded_white_bg"
-                        android:focusable="false"
-                        android:gravity="center_vertical"
-                        android:hint="Amount"
-                        android:imeOptions="actionNext"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:padding="8dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_seat"/>
+
+                        <TextView
+                            android:padding="8dp"
+                            android:layout_weight="5"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:textSize="12sp"
+                            android:layout_height="wrap_content"
+                            android:text="Number of Seats"/>
+
+                        <Button
+                            android:id="@+id/decreaseSeats"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_gray"
+                            android:text="-"
+                            android:textColor="#bbbbbb"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvSeatNumber"
+                            android:background="@drawable/border_gray"
+                            android:textAlignment="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="1"/>
+
+                        <Button
+                            android:id="@+id/increaseSeats"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_gray"
+                            android:text="+"
+                            android:textColor="#bbbbbb"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            />
+
+                    </LinearLayout>
 
 
-            <android.support.v7.widget.CardView
-                android:visibility="gone"
-                android:layout_above="@id/locations"
-                android:id="@+id/cardViewMove"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                app:cardBackgroundColor="@color/buttons"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="7dp">
 
-                <TextView
-                    android:id="@+id/tvMoov"
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:weightSum="8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:padding="8dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@mipmap/wallet_icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:padding="8dp"
+                            android:text="Estimated Fare"
+                            android:layout_weight="5"
+                            android:textSize="12sp"
+                            android:layout_width="0dp"
+                            android:gravity="center_vertical"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:layout_weight="3"
+                            android:weightSum="2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:padding="8dp"
+                                android:visibility="invisible"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="\u20a6"
+                                android:textAlignment="textEnd"
+                                android:layout_weight="1"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="end|center_vertical" />
+                            <TextView
+                                android:id="@+id/tvAmount"
+                                android:padding="8dp"
+                                android:textColor="@color/pink"
+                                android:textStyle="bold"
+                                tools:text="80000"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:autoSizeTextType="uniform"
+                                android:maxLines="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardViewMove"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:gravity="center"
-                    android:text="MOOV"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-            </android.support.v7.widget.CardView>
+                    app:cardBackgroundColor="@color/buttons"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="7dp">
 
+                    <TextView
+                        android:id="@+id/tvMoov"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="Request Ride"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                </android.support.v7.widget.CardView>
+
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tvBookFutureRide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule a ride"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:layout_margin="15dp"/>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:visibility="gone"
+               android:layout_marginTop="45dp"
+                android:background="@color/semi_transparent"
+                android:id="@+id/scrollViewResults"
+                android:weightSum="5"
+                android:orientation="vertical"
+                android:layout_above="@id/anchor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/autocompleteLayout"
+                    android:background="@color/semi_transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.CardView
+                        app:cardUseCompatPadding="true"
+                        android:id="@+id/cardLocations"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:weightSum="6"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <ImageView
+                                android:paddingTop="20dp"
+                                android:paddingBottom="20dp"
+                                android:layout_weight="1"
+                                android:src="@drawable/left"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_weight="5"
+                                android:weightSum="2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                    android:maxLines="1"
+                                    android:inputType="textNoSuggestions"
+                                    android:background="@drawable/border_white"
+                                    android:layout_weight="1"
+                                    android:padding="8dp"
+                                    android:textColor="#ffa944"
+                                    android:hint="Current Location"
+                                    android:id="@+id/autoCompleteLocation"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp" />
+
+                                <View
+                                    android:background="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight=".01"
+                                    android:layout_height="0dp"/>
+
+                                <LinearLayout
+                                    android:weightSum="5"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp">
+                                    <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                        android:maxLines="1"
+                                        android:inputType="textNoSuggestions"
+                                        android:drawablePadding="15dp"
+                                        android:background="@drawable/border_white"
+                                        android:gravity="center_vertical"
+                                        android:padding="8dp"
+                                        android:layout_weight="5"
+                                        android:textColor="@color/gray"
+                                        android:fontFamily="@font/lato_regular"
+                                        android:id="@+id/autoCompleteDestination"
+                                        android:hint="e.g Cafeteria"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+
+
+
+
+                <TextView
+                    android:paddingTop="15dp"
+                    android:paddingLeft="45dp"
+                    android:paddingRight="45dp"
+                    android:id="@+id/searchResultsTv"
+                    android:background="@color/semi_transparent"
+                    android:layout_weight="0.8"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="12sp"
+                    android:textColor="#ced0d3"
+                    android:textAllCaps="true"
+                    android:text="Search Results" />
+
+                <ScrollView
+                    android:paddingLeft="45dp"
+                    android:visibility="invisible"
+                    android:paddingRight="45dp"
+                    android:id="@+id/searchResults"
+                    android:background="@color/semi_transparent"
+                    android:layout_weight="3.7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:overScrollMode="always"
+                    android:isScrollContainer="true"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbarStyle="outsideInset"
+                    android:fadeScrollbars="false"
+                    android:scrollbars="vertical">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.v7.widget.RecyclerView>
+                </ScrollView>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_above="@id/anchor"
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="450dp">
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <android.support.v7.widget.CardView
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        app:cardCornerRadius="25dp">
+
+                        <LinearLayout
+                            android:weightSum="7"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:id="@+id/anchor3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+
+
+                            <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                android:maxLines="1"
+                                android:inputType="text"
+                                android:id="@+id/goingTo"
+                                android:layout_weight="6.5"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:background="@color/white"
+                                android:hint="Going where ?"
+                                android:dropDownAnchor="@id/llMapMainLayout"
+                                android:imeOptions="actionNext"
+                                android:paddingLeft="25dp"
+                                android:paddingRight="25dp"
+                                android:textColor="@color/black" />
+
+
+                            <ImageView
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/searchDestination"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight=".5"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_search" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
             <android.support.v7.widget.CardView
-                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:layout_marginTop="60dp"
+                android:layout_above="@id/anchor"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 app:cardCornerRadius="20dp"
-                android:layout_alignParentBottom="true"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/translucent"
                 android:id="@+id/locations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
-                    android:padding="10dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -225,40 +763,6 @@
                         android:fontFamily="@font/lato_black"
                         android:text="Where are you going?"/>
 
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="5dp"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="7dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_search" />
-
-                            <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
-                                android:maxLines="1"
-                                android:inputType="textCapSentences"
-                                android:id="@+id/autoCompleteDestination"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:hint="Enter Destination"
-                                android:dropDownAnchor="@id/anchor"
-                                android:imeOptions="actionNext"
-                                android:paddingRight="15dp"
-                                android:textColor="@color/black" />
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
@@ -270,6 +774,8 @@
                         app:cardElevation="7dp">
 
                         <LinearLayout
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
@@ -283,18 +789,56 @@
                             <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
                                 android:maxLines="1"
                                 android:inputType="textCapSentences"
-                                android:id="@+id/autoCompleteLocation"
+                                android:id="@+id/autoCompleteLocationold"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/white"
                                 android:hint="Enter Location"
-                                android:dropDownAnchor="@id/anchor"
-                                android:dropDownHeight="800dp"
+                                android:imeOptions="actionNext"
+                                android:paddingRight="15dp"
+                                android:textColor="@color/black"
+                                />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="7dp">
+
+                        <LinearLayout
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:id="@+id/anchor2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_search" />
+
+                            <com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView
+                                android:maxLines="1"
+                                android:inputType="textCapSentences"
+                                android:id="@+id/autoCompleteDestinationold"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:hint="Enter Destination"
+                                android:dropDownAnchor="@id/llMapMainLayout"
                                 android:imeOptions="actionNext"
                                 android:paddingRight="15dp"
                                 android:textColor="@color/black" />
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
+
+
 
 
 
@@ -334,34 +878,742 @@
 
 
             </android.support.v7.widget.CardView>
+            <View
+                android:visibility="invisible"
+                android:background="@color/search_results_color"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/anchor"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
 
-
-
-
-
-
-
-
-            <TextView
-                android:id="@+id/tvBookFutureRide"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Schedule a ride"
-                android:visibility="gone"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15dp"
-                android:layout_marginTop="10dp"/>
         </RelativeLayout>
     </LinearLayout>
 
     <include
         android:id="@+id/layoutCurrentRider"
-        layout="@layout/current_rider"
+        layout="@layout/current_rider_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:visibility="gone" />
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/root"-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/llMapMainLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+
+            <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:id="@+id/map"-->
+                <!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--tools:context=".HomeActivity" />-->
+        <!--</LinearLayout>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:scaleType="centerCrop"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:src="@mipmap/map_bg" />&ndash;&gt;-->
+
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical"-->
+            <!--&gt;-->
+
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/tvSearch"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:visibility="invisible"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="10dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textColor="@color/grey_white"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Search Results"/>&ndash;&gt;-->
+
+
+
+
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+                <!--<LinearLayout-->
+                    <!--android:visibility="gone"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:id="@+id/cardViewRideDetails"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_marginBottom="4dp"-->
+                        <!--app:cardBackgroundColor="@color/white"-->
+                        <!--app:cardCornerRadius="5dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<LinearLayout-->
+                            <!--android:padding="10dp"-->
+                            <!--android:weightSum="6"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<ImageView-->
+                                <!--android:layout_margin="4dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:background="#0000"-->
+                                <!--android:src="@mipmap/my_location_icon"-->
+                                <!--android:layout_width="20dp"-->
+                                <!--android:layout_height="20dp"-->
+                                <!--/>-->
+                            <!--<LinearLayout-->
+                                <!--android:layout_weight="6"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content">-->
+
+                                <!--<TextView-->
+                                    <!--android:padding="4dp"-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:text="@string/dummy_pickup"-->
+                                    <!--android:layout_height="wrap_content" />-->
+                                <!--<TextView-->
+                                    <!--android:id="@+id/tvLocationName"-->
+                                    <!--android:padding="4dp"-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--tools:text="@string/dummy_location"-->
+                                    <!--android:textStyle="bold"-->
+                                    <!--android:fontFamily="@font/lato_black"-->
+                                    <!--android:layout_height="wrap_content" />-->
+                            <!--</LinearLayout>-->
+
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/changeLocation"-->
+                                <!--android:layout_margin="4dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:background="#0000"-->
+                                <!--android:src="@drawable/ic_add"-->
+                                <!--android:layout_width="20dp"-->
+                                <!--android:layout_height="20dp" />-->
+                        <!--</LinearLayout>-->
+                    <!--</android.support.v7.widget.CardView>-->
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_marginBottom="15dp"-->
+                        <!--app:cardBackgroundColor="@color/white"-->
+                        <!--app:cardCornerRadius="5dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<LinearLayout-->
+                            <!--android:padding="10dp"-->
+                            <!--android:weightSum="6"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<ImageView-->
+                                <!--android:layout_margin="4dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:background="#0000"-->
+                                <!--android:src="@mipmap/destination_location"-->
+                                <!--android:layout_width="20dp"-->
+                                <!--android:layout_height="20dp"-->
+                                <!--/>-->
+                            <!--<LinearLayout-->
+                                <!--android:layout_weight="6"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content">-->
+
+                                <!--<TextView-->
+                                    <!--android:padding="4dp"-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:text="Destination Location"-->
+                                    <!--android:layout_height="wrap_content" />-->
+                                <!--<TextView-->
+                                    <!--android:id="@+id/tvDestinationName"-->
+                                    <!--android:padding="4dp"-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--tools:text="Name Of Destination"-->
+                                    <!--android:textStyle="bold"-->
+                                    <!--android:fontFamily="@font/lato_black"-->
+                                    <!--android:layout_height="wrap_content" />-->
+                            <!--</LinearLayout>-->
+
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/changeDestination"-->
+                                <!--android:layout_margin="4dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:background="#0000"-->
+                                <!--android:src="@mipmap/edit_icon"-->
+                                <!--android:layout_width="20dp"-->
+                                <!--android:layout_height="20dp" />-->
+                        <!--</LinearLayout>-->
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:background="@drawable/border_gray"-->
+                        <!--app:cardBackgroundColor="@color/white"-->
+                        <!--app:cardCornerRadius="5dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<LinearLayout-->
+                            <!--android:visibility="gone"-->
+                            <!--android:id="@+id/llFutureRideDetails"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2.1">-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvDate"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="@drawable/layout_gray_little_rounded_white_bg"-->
+                                <!--android:gravity="center_vertical"-->
+                                <!--android:hint="Date"-->
+                                <!--android:paddingLeft="15dp"-->
+                                <!--android:paddingRight="15dp"-->
+                                <!--android:textColor="@color/black" />-->
+
+                            <!--<View-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight=".1" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvTime"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="@drawable/layout_gray_little_rounded_white_bg"-->
+                                <!--android:gravity="center_vertical"-->
+                                <!--android:hint="Time"-->
+                                <!--android:paddingLeft="15dp"-->
+                                <!--android:paddingRight="15dp"-->
+                                <!--android:textColor="@color/black" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:background="@drawable/border_gray"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--app:cardBackgroundColor="@color/white"-->
+                        <!--app:cardCornerRadius="5dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<LinearLayout-->
+                            <!--android:weightSum="8"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+
+                            <!--<ImageView-->
+                                <!--android:padding="8dp"-->
+                                <!--android:layout_gravity="center_vertical"-->
+                                <!--android:layout_width="40dp"-->
+                                <!--android:layout_height="40dp"-->
+                                <!--android:src="@mipmap/seat"/>-->
+
+                            <!--<TextView-->
+                                <!--android:padding="8dp"-->
+                                <!--android:layout_weight="5"-->
+                                <!--android:layout_gravity="center_vertical"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Number of Seats"/>-->
+
+                            <!--<Button-->
+                                <!--android:id="@+id/decreaseSeats"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="@drawable/border_gray"-->
+                                <!--android:text="-"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--/>-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvSeatNumber"-->
+                                <!--android:background="@drawable/border_gray"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:gravity="center_vertical"-->
+                                <!--android:layout_gravity="center_vertical"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:text="1"/>-->
+
+                            <!--<Button-->
+                                <!--android:id="@+id/increaseSeats"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="@drawable/border_gray"-->
+                                <!--android:text="+"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--/>-->
+
+                        <!--</LinearLayout>-->
+
+
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--app:cardBackgroundColor="@color/white"-->
+                        <!--app:cardCornerRadius="5dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<LinearLayout-->
+                            <!--android:weightSum="4"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_marginLeft="10dp"-->
+                                <!--android:padding="4dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:text="Price"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content" />-->
+
+                            <!--<TextView-->
+                                <!--android:layout_marginLeft="10dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:text="\u20a6"-->
+                                <!--android:textAlignment="textEnd"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:gravity="end" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvAmount"-->
+                                <!--android:padding="4dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:text=""-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content" />-->
+                        <!--</LinearLayout>-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:id="@+id/cardViewMove"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="40dp"-->
+                        <!--app:cardBackgroundColor="@color/buttons"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--app:cardCornerRadius="20dp"-->
+                        <!--app:cardElevation="7dp">-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/tvMoov"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="Request Ride"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:textSize="16dp" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tvBookFutureRide"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Schedule a ride"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:textColor="@color/colorPrimaryDark"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_margin="15dp"/>-->
+
+
+
+                <!--</LinearLayout>-->
+
+
+                <!--<LinearLayout-->
+                    <!--android:background="@color/search_results_color"-->
+                    <!--android:id="@+id/scrollViewResults"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:weightSum="5"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_above="@id/anchor"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_margin="16dp"-->
+                        <!--app:cardCornerRadius="20dp"-->
+                        <!--app:cardBackgroundColor="@color/white"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<LinearLayout-->
+                            <!--android:weightSum="6"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+
+
+                            <!--<ImageView-->
+                                <!--android:paddingTop="13dp"-->
+                                <!--android:paddingBottom="13dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:src="@drawable/left"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="60dp" />-->
+
+                            <!--<LinearLayout-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:layout_weight="5"-->
+                                <!--android:weightSum="2"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="60dp">-->
+                                <!--<com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView-->
+                                    <!--android:background="@drawable/border_white"-->
+                                    <!--android:layout_weight="1"-->
+                                    <!--android:id="@+id/autoCompleteLocation"-->
+                                    <!--android:padding="4dp"-->
+                                    <!--android:hint="Current Location"-->
+                                    <!--android:textColor="@color/yellow"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="0dp" />-->
+
+                                <!--<com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView-->
+                                    <!--android:background="@drawable/border_white"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:layout_weight="1"-->
+                                    <!--android:padding="4dp"-->
+                                    <!--android:id="@+id/autoCompleteDestination"-->
+                                    <!--android:hint="Covenant University"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="0dp" />-->
+
+                            <!--</LinearLayout>-->
+                        <!--</LinearLayout>-->
+                    <!--</android.support.v7.widget.CardView>-->
+
+
+
+                    <!--<TextView-->
+                        <!--android:background="@color/search_results_color"-->
+                        <!--android:layout_weight="0.4"-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="0dp"-->
+                        <!--android:textColor="#78849E"-->
+                        <!--android:textAllCaps="true"-->
+                        <!--android:text="Search Results"-->
+                        <!--android:paddingStart="10dp" />-->
+
+                    <!--<ScrollView-->
+                        <!--android:background="@color/search_results_color"-->
+                        <!--android:layout_weight="4.6"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="0dp"-->
+                        <!--android:overScrollMode="always"-->
+                        <!--android:isScrollContainer="true"-->
+                        <!--android:scrollbarAlwaysDrawVerticalTrack="true"-->
+                        <!--android:scrollbarStyle="outsideInset"-->
+                        <!--android:fadeScrollbars="false"-->
+                        <!--android:scrollbars="vertical">-->
+                        <!--<android.support.v7.widget.RecyclerView-->
+
+                            <!--android:id="@+id/recycler_location"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent">-->
+
+                        <!--</android.support.v7.widget.RecyclerView>-->
+                    <!--</ScrollView>-->
+
+
+
+
+                <!--</LinearLayout>-->
+
+
+                <!--&lt;!&ndash;<View&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_above="@id/locations"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="50dp"/>&ndash;&gt;-->
+
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_above="@id/anchor"-->
+                    <!--app:cardCornerRadius="20dp"-->
+                    <!--app:cardBackgroundColor="@color/whiteLite"-->
+                    <!--android:id="@+id/location"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp">-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+
+
+                        <!--<android.support.v7.widget.CardView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="20dp"-->
+                            <!--android:layout_marginLeft="16dp"-->
+                            <!--android:layout_marginRight="16dp"-->
+                            <!--app:cardCornerRadius="15dp"-->
+                            <!--app:cardElevation="7dp">-->
+
+                            <!--<LinearLayout-->
+                                <!--android:weightSum="7"-->
+                                <!--android:focusable="true"-->
+                                <!--android:focusableInTouchMode="true"-->
+                                <!--android:id="@+id/anchor3"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="horizontal">-->
+
+
+
+                                <!--<EditText-->
+                                    <!--android:maxLines="1"-->
+                                    <!--android:inputType="textCapSentences"-->
+                                    <!--android:id="@+id/goingTo"-->
+                                    <!--android:layout_weight="6.5"-->
+                                    <!--android:layout_width="0dp"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:background="@color/white"-->
+                                    <!--android:hint="Where Are you going to ?"-->
+                                    <!--android:layout_gravity="center_vertical"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:paddingLeft="5dp"-->
+                                    <!--android:dropDownAnchor="@id/llMapMainLayout"-->
+                                    <!--android:imeOptions="actionNext"-->
+                                    <!--android:paddingRight="15dp"-->
+                                    <!--android:textColor="@color/black" />-->
+
+
+                                <!--<ImageView-->
+                                    <!--android:layout_gravity="center_vertical"-->
+                                    <!--android:layout_weight=".5"-->
+                                    <!--android:layout_width="40dp"-->
+                                    <!--android:layout_height="40dp"-->
+                                    <!--android:padding="10dp"-->
+                                    <!--android:src="@drawable/ic_search" />-->
+                            <!--</LinearLayout>-->
+                        <!--</android.support.v7.widget.CardView>-->
+
+
+
+                    <!--</LinearLayout>-->
+
+
+                <!--</android.support.v7.widget.CardView>-->
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:visibility="gone"-->
+                    <!--android:layout_marginTop="60dp"-->
+                    <!--android:layout_above="@id/anchor"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--app:cardCornerRadius="20dp"-->
+                    <!--app:cardBackgroundColor="@color/translucent"-->
+                    <!--android:id="@+id/locations"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+                    <!--<LinearLayout-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:id="@+id/welcomeText"-->
+                            <!--android:fontFamily="@font/lato_regular"-->
+                            <!--android:textStyle="bold"-->
+                            <!--android:layout_marginLeft="22dp"-->
+                            <!--android:layout_marginRight="22dp"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textSize="15sp"-->
+                            <!--android:textColor="@color/grayDark"-->
+                            <!--android:text="Hey Felix"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_marginTop="2dp"-->
+                            <!--android:layout_marginLeft="22dp"-->
+                            <!--android:layout_marginRight="22dp"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textSize="14sp"-->
+                            <!--android:fontFamily="@font/lato_black"-->
+                            <!--android:text="Where are you going?"/>-->
+
+
+                        <!--<android.support.v7.widget.CardView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:layout_marginLeft="16dp"-->
+                            <!--android:layout_marginRight="16dp"-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--app:cardCornerRadius="20dp"-->
+                            <!--app:cardElevation="7dp">-->
+
+                            <!--<LinearLayout-->
+                                <!--android:focusable="true"-->
+                                <!--android:focusableInTouchMode="true"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="horizontal">-->
+
+                                <!--<ImageView-->
+                                    <!--android:layout_width="40dp"-->
+                                    <!--android:layout_height="40dp"-->
+                                    <!--android:padding="10dp"-->
+                                    <!--android:src="@mipmap/my_location_icon" />-->
+
+                                <!--<com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView-->
+                                    <!--android:maxLines="1"-->
+                                    <!--android:inputType="textCapSentences"-->
+                                    <!--android:id="@+id/autoCompleteLocationold"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:background="@color/white"-->
+                                    <!--android:hint="Enter Location"-->
+                                    <!--android:imeOptions="actionNext"-->
+                                    <!--android:paddingRight="15dp"-->
+                                    <!--android:textColor="@color/black"-->
+                                    <!--/>-->
+                            <!--</LinearLayout>-->
+                        <!--</android.support.v7.widget.CardView>-->
+                        <!--<android.support.v7.widget.CardView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:layout_marginLeft="16dp"-->
+                            <!--android:layout_marginRight="16dp"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--app:cardCornerRadius="20dp"-->
+                            <!--app:cardElevation="7dp">-->
+
+                            <!--<LinearLayout-->
+                                <!--android:focusable="true"-->
+                                <!--android:focusableInTouchMode="true"-->
+                                <!--android:id="@+id/anchor2"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="horizontal">-->
+
+                                <!--<ImageView-->
+                                    <!--android:layout_width="40dp"-->
+                                    <!--android:layout_height="40dp"-->
+                                    <!--android:padding="10dp"-->
+                                    <!--android:src="@drawable/ic_search" />-->
+
+                                <!--<com.moovapp.riderapp.utils.placesAutocomplete.CustomAutoCompleteTextView-->
+                                    <!--android:maxLines="1"-->
+                                    <!--android:inputType="textCapSentences"-->
+                                    <!--android:id="@+id/autoCompleteDestinationold"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:background="@color/white"-->
+                                    <!--android:hint="Enter Destination"-->
+                                    <!--android:dropDownAnchor="@id/llMapMainLayout"-->
+                                    <!--android:imeOptions="actionNext"-->
+                                    <!--android:paddingRight="15dp"-->
+                                    <!--android:textColor="@color/black" />-->
+                            <!--</LinearLayout>-->
+                        <!--</android.support.v7.widget.CardView>-->
+
+
+
+
+
+                        <!--<CheckBox-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:id="@+id/cbPool"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="20dp"-->
+                            <!--android:checked="true"-->
+                            <!--android:text="Do you want to pool the ride" />-->
+
+                        <!--<android.support.v7.widget.CardView-->
+                            <!--android:id="@+id/cardViewNext"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--app:cardBackgroundColor="@color/buttons"-->
+                            <!--android:layout_marginLeft="5dp"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--app:cardCornerRadius="20dp"-->
+                            <!--app:cardElevation="7dp">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="40dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="NEXT"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="16dp" />-->
+
+                        <!--</android.support.v7.widget.CardView>-->
+
+
+                    <!--</LinearLayout>-->
+
+
+                <!--</android.support.v7.widget.CardView>-->
+                <!--<View-->
+                    <!--android:background="@color/search_results_color"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:id="@+id/anchor"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="5dp"/>-->
+
+            <!--</RelativeLayout>-->
+        <!--</LinearLayout>-->
+
+        <!--<include-->
+            <!--android:id="@+id/layoutCurrentRider"-->
+            <!--layout="@layout/current_rider_new"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:visibility="gone" />-->
+
+
+    <!--</RelativeLayout>-->
+
+
 </RelativeLayout>

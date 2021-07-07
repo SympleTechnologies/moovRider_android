@@ -92,26 +92,25 @@ public class UpcominRidesListAdapter extends ArrayAdapter<ViewCurrentRideRespons
         vh.tvCancelRide.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Bold.ttf"));
         vh.tvNoTrips.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Bold.ttf"));
 
-        vh.tvRiderName.setText(item.getDriver_details().getFirst_name() + " " + item.getDriver_details().getLast_name());
-        vh.tvCarModel.setText(item.getDriver_details().getCar_model());
-        vh.rating1.setRating(Integer.parseInt(item.getDriver_details().getRatings()+""));
-        vh.tvRiderPhone.setText(item.getDriver_details().getPhone());
+        vh.tvCarModel.setText(item.getDriverDetails().getCarModel());
+        vh.rating1.setRating(Integer.parseInt(item.getDriverDetails().getRatings()+""));
+        vh.tvRiderPhone.setText(item.getDriverDetails().getPhone());
 //        tvNoTrips.setText("No of trips: " + data.getDriver_details().getTotal_rides());
 //        tvDistance.setText(data.getDistance_to_drive_details().getDistance());
         vh.tvNoTrips.setVisibility(View.GONE);
         vh.tvDistance.setText("15 Km");
-        vh.tvCarNumber.setText(item.getDriver_details().getVehicle_no());
+        vh.tvCarNumber.setText(item.getDriverDetails().getVehicleNo());
 //        tvEta.setText(data.getDistance_to_drive_details().getTime());
         vh.tvEta.setText("15 Minutes");
         try {
-            if (item.getDriver_details().getImage().length() > 3) {
-                Picasso.get().load(item.getDriver_details().getImage()).placeholder(R.mipmap.user_placeholder).error(R.mipmap.user_placeholder).into(vh.imgRiderImage);
+            if (item.getDriverDetails().getImage().length() > 3) {
+                Picasso.get().load(item.getDriverDetails().getImage()).placeholder(R.mipmap.user_placeholder).error(R.mipmap.user_placeholder).into(vh.imgRiderImage);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if (item.getRide_status().equals("booked")) {
+        if (item.getRideStatus().equals("booked")) {
             vh.tvCancelRide.setVisibility(View.VISIBLE);
         } else {
             vh.tvCancelRide.setVisibility(View.GONE);
@@ -120,7 +119,7 @@ public class UpcominRidesListAdapter extends ArrayAdapter<ViewCurrentRideRespons
         vh.tvCancelRide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cancelRideInterface.onCancelRide(item.getRide_id()+"");
+                cancelRideInterface.onCancelRide(item.getRideId()+"");
             }
         });
 

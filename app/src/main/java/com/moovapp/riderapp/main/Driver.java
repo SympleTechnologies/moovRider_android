@@ -13,16 +13,16 @@ public class Driver {
      * longt : 76.88155499999999
      */
 
-    private Double angleX;
+    private float angleX;
     private String lat;
     private String id;
     private String longt;
 
-    public Double getAngleX() {
+    public float getAngleX() {
         return angleX;
     }
 
-    public void setAngleX(Double angleX) {
+    public void setAngleX(float angleX) {
         this.angleX = angleX;
     }
 

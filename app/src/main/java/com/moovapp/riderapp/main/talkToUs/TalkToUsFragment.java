@@ -45,7 +45,7 @@ public class TalkToUsFragment extends LMTFragmentHelper {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.talk_to_us_fragment, container, false);
+        View view = inflater.inflate(R.layout.talk_to_us, container, false);
         ButterKnife.bind(this, view);
         myProgressDialog = new MyProgressDialog(getActivity());
         cd = new ConnectionDetector(getContext());

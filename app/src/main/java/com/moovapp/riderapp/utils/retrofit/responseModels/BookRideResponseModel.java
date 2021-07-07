@@ -11,6 +11,19 @@ public class BookRideResponseModel {
     private boolean status;
     private DataEntity data;
     private String message;
+
+//    @Override
+//    public String toString() {
+//        return "BookRideResponseModel{" +
+//                "status=" + status +
+//                ", data=" + data.toString() +
+//                ", message='" + message.toString() + '\'' +
+//                ", links=" + links +
+//                ", poly_lines=" + poly_lines +
+//                ", poly_line='" + poly_line + '\'' +
+//                '}';
+//    }
+
     private LinksEntity links;
     private PolyLinesEntity poly_lines;
     private String poly_line;
@@ -108,6 +121,16 @@ public class BookRideResponseModel {
             this.ride_id = ride_id;
         }
 
+//        @Override
+//        public String toString() {
+//            return "DataEntity{" +
+//                    "driver_details=" + driver_details.toString() +
+//                    ", distance_to_drive_details=" + distance_to_drive_details.toString() +
+//                    ", trip_id=" + trip_id +
+//                    ", ride_id=" + ride_id +
+//                    '}';
+//        }
+
         public static class DriverDetailsEntity {
             /**
              * driver_id : 2
@@ -134,34 +157,53 @@ public class BookRideResponseModel {
              * image : http://themoovapp.com/manage/uploads/userpic/9227df6425b815c8.jpg
              */
 
-            private int driver_id;
+            private String driver_id;
             private String first_name;
             private String last_name;
             private String email;
-            private int institution_id;
+            private String institution_id;
             private String institution_name;
             private String phone;
             private String phone_country;
             private String gender;
             private String vehicle_no;
-            private int verified;
+            private String verified;
             private String u_device_id;
             private String car_model;
-            private int car_capacity;
+            private String car_capacity;
             private String license_no;
             private String license_expiry;
             private String dob;
             private String device_type;
-            private int ratings;
+            private double ratings;
             private String wallet_balance;
+            private String car_colour;
+
+            public String getCar_colour() {
+                return car_colour;
+            }
+
+            public void setCar_colour(String car_colour) {
+                this.car_colour = car_colour;
+            }
+
+            public String getCar_image() {
+                return car_image;
+            }
+
+            public void setCar_image(String car_image) {
+                this.car_image = car_image;
+            }
+
+            private String car_image;
             private int total_rides;
             private String image;
 
-            public int getDriver_id() {
+            public String getDriver_id() {
                 return driver_id;
             }
 
-            public void setDriver_id(int driver_id) {
+            public void setDriver_id(String driver_id) {
                 this.driver_id = driver_id;
             }
 
@@ -189,11 +231,11 @@ public class BookRideResponseModel {
                 this.email = email;
             }
 
-            public int getInstitution_id() {
+            public String getInstitution_id() {
                 return institution_id;
             }
 
-            public void setInstitution_id(int institution_id) {
+            public void setInstitution_id(String institution_id) {
                 this.institution_id = institution_id;
             }
 
@@ -237,11 +279,11 @@ public class BookRideResponseModel {
                 this.vehicle_no = vehicle_no;
             }
 
-            public int getVerified() {
+            public String getVerified() {
                 return verified;
             }
 
-            public void setVerified(int verified) {
+            public void setVerified(String verified) {
                 this.verified = verified;
             }
 
@@ -261,11 +303,11 @@ public class BookRideResponseModel {
                 this.car_model = car_model;
             }
 
-            public int getCar_capacity() {
+            public String getCar_capacity() {
                 return car_capacity;
             }
 
-            public void setCar_capacity(int car_capacity) {
+            public void setCar_capacity(String car_capacity) {
                 this.car_capacity = car_capacity;
             }
 
@@ -301,11 +343,11 @@ public class BookRideResponseModel {
                 this.device_type = device_type;
             }
 
-            public int getRatings() {
+            public double getRatings() {
                 return ratings;
             }
 
-            public void setRatings(int ratings) {
+            public void setRatings(double ratings) {
                 this.ratings = ratings;
             }
 
@@ -332,6 +374,34 @@ public class BookRideResponseModel {
             public void setImage(String image) {
                 this.image = image;
             }
+
+//            @Override
+//            public String toString() {
+//                return "DriverDetailsEntity{" +
+//                        "driver_id=" + driver_id +
+//                        ", first_name='" + first_name + '\'' +
+//                        ", last_name='" + last_name + '\'' +
+//                        ", email='" + email + '\'' +
+//                        ", institution_id=" + institution_id +
+//                        ", institution_name='" + institution_name + '\'' +
+//                        ", phone='" + phone + '\'' +
+//                        ", phone_country='" + phone_country + '\'' +
+//                        ", gender='" + gender + '\'' +
+//                        ", vehicle_no='" + vehicle_no + '\'' +
+//                        ", verified=" + verified +
+//                        ", u_device_id='" + u_device_id + '\'' +
+//                        ", car_model='" + car_model + '\'' +
+//                        ", car_capacity=" + car_capacity +
+//                        ", license_no='" + license_no + '\'' +
+//                        ", license_expiry='" + license_expiry + '\'' +
+//                        ", dob='" + dob + '\'' +
+//                        ", device_type='" + device_type + '\'' +
+//                        ", ratings=" + ratings +
+//                        ", wallet_balance='" + wallet_balance + '\'' +
+//                        ", total_rides=" + total_rides +
+//                        ", image='" + image + '\'' +
+//                        '}';
+//            }
         }
 
         public static class DistanceToDriveDetailsEntity {

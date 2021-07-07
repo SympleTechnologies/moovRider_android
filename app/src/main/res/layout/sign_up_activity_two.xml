@@ -16,19 +16,19 @@
         android:textSize="14dp" />
 
     <android.support.v7.widget.CardView
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="25dp"
         app:cardBackgroundColor="@color/white"
         android:layout_margin="@dimen/medium_dimens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -57,7 +57,7 @@
 
                 <ImageView
                     android:layout_centerVertical="true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:padding="15dp"
@@ -78,15 +78,22 @@
         android:textColor="@color/grayDark"
         android:textSize="14dp" />
 
+
+    <android.support.v7.widget.CardView
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="25dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/layout_gray_little_rounded_white_bg"
+        android:layout_height="50dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -113,6 +120,7 @@
                 android:textSize="14dp" />
 
             <ImageView
+                android:id="@+id/showRoles"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
@@ -121,4 +129,6 @@
 
         </RelativeLayout>
     </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 </LinearLayout>

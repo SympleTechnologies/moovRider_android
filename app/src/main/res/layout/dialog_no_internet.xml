@@ -19,34 +19,46 @@
         android:orientation="vertical"
         android:weightSum="2">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".9"
-            android:src="@mipmap/no_internet_icon" />
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".8"-->
+        <!--android:src="@mipmap/no_server_icon1" />-->
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".6">
+            android:layout_height="match_parent">
 
-            <ImageView
+            <TextView
+                android:fontFamily="@font/lato_hairline"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerVertical="true"
                 android:layout_marginBottom="50dp"
-                android:src="@mipmap/no_internet_text" />
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="@string/no_internet_text"/>
+
+            <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginBottom="50dp"-->
+            <!--android:src="@mipmap/no_server_text1" />-->
 
             <TextView
                 android:id="@+id/tvRetry"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/layout_primary_rounded_bg"
                 android:gravity="center"
-                android:text="Retry"
+                android:text="Try Again"
+                android:layout_margin="20dp"
                 android:textColor="#ffffff"
-                android:textSize="13dp"
+                android:textSize="20sp"
+                android:textAllCaps="true"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>

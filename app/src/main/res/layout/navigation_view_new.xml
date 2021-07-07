@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="290dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:background="#494751"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            >
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:src="@drawable/top" />-->
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginBottom="10dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profileImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/user_placeholder"
+                app:civ_border_color="@color/colorAccent"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:layout_below="@id/profileImage"
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:maxLines="1"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:text="------ -------"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                />
+
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="@color/buttons"/>
+
+
+
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llMoovNav"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_directions_car_24px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="moov"
+                    android:textColor="@color/blackLite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/grayLitest" />-->
+
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:weightSum="4"
+                android:id="@+id/llRidesNav"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="3"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/icon_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="trips"
+                    android:textColor="@color/blackLite"
+                    android:textSize="20sp"
+                    android:drawableStart="@drawable/icon_1"
+                    android:layout_marginStart="7dp" />
+
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/imgRidesArrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:alpha=".5"
+                    android:padding="5dp"
+                    android:src="@mipmap/down_arrow_black" />
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/grayLitest" />-->
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/llExpandedViewRides"
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llUpcommingRidesNav"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="35dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/grayDark"
+                        android:text="upcoming rides"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grayLite" />-->
+
+                <LinearLayout
+                    android:id="@+id/llPreviousRidesNav"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="35dp"
+                        android:textColor="@color/grayDark"                        android:gravity="center_vertical"
+                        android:text="previous rides"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grayLitest" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/llPaymentHistoryNav"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/icon_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blackLite"
+                    android:text="Payment History"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/grayLitest" />-->
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/llTalkToUsNav"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="contact us"
+                    android:textColor="@color/blackLite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/grayLitest" />-->
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/llSettingsNav"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/path"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="settings"
+                    android:textColor="@color/blackLite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/grayLitest" />-->
+
+            <LinearLayout
+                android:id="@+id/llLogoutNav"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="Logout"
+                    android:textColor="@color/blackLite"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:visibility="gone"-->
+                <!--android:background="@color/grayLitest" />-->
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

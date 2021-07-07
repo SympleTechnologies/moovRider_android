@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -45,31 +46,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Profile"
+                android:text="profile"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardViewEdit"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                app:cardElevation="7dp">
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cardViewEdit"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--app:cardElevation="7dp">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@color/white">-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="3dp"
-                        android:src="@mipmap/edit_icon" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+                    <!--<ImageView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:padding="3dp"-->
+                        <!--android:src="@mipmap/edit_icon" />-->
+                <!--</LinearLayout>-->
+            <!--</android.support.v7.widget.CardView>-->
         </RelativeLayout>
     </LinearLayout>
 
@@ -79,7 +80,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -125,12 +126,11 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="40dp"
+                                android:layout_width="20dp"
                                 android:layout_gravity="center"
-                                android:layout_height="40dp"
+                                android:layout_height="20dp"
                                 android:background="@color/white"
-                                android:padding="2dp"
-                                android:src="@mipmap/edit_image_icon" />
+                                android:src="@drawable/ic_edit_new" />
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
@@ -138,13 +138,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="204dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
-                android:background="@drawable/layout_gray_little_rounded_white_bg"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:orientation="horizontal">
@@ -170,7 +171,7 @@
                         android:maxLines="1"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/blackLight"
                         android:textSize="14dp" />
 
                 </LinearLayout>
@@ -181,6 +182,7 @@
                     android:background="@color/gray" />
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:orientation="horizontal">
@@ -211,12 +213,14 @@
 
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray" />
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/gray" />-->
 
                 <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:orientation="horizontal">
@@ -241,47 +245,12 @@
                         android:maxLines="1"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/blackLight"
                         android:textSize="14dp" />
 
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray" />
 
-                <LinearLayout
-                    android:id="@+id/llUniversity"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="7dp"
-                        android:alpha=".3"
-                        android:padding="7dp"
-                        android:src="@mipmap/university_icon" />
-
-                    <EditText
-                        android:id="@+id/edUniversity"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/transparent"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:hint="University"
-                        android:imeOptions="actionNext"
-                        android:inputType="textCapWords"
-                        android:maxLines="1"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/rlSpinnerUniversity"
@@ -329,6 +298,8 @@
                     android:background="@color/gray" />
 
                 <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:orientation="horizontal">
@@ -354,7 +325,46 @@
                         android:maxLines="1"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/blackLight"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/llUniversity"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="7dp"
+                        android:alpha=".3"
+                        android:padding="7dp"
+                        android:src="@mipmap/university_icon" />
+
+                    <EditText
+                        android:id="@+id/edUniversity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transparent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:hint="University"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/blackLight"
                         android:textSize="14dp" />
 
                 </LinearLayout>

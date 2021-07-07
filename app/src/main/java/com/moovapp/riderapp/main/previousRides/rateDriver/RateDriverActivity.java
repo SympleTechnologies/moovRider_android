@@ -92,7 +92,8 @@ public class RateDriverActivity extends LMTBaseActivity {
                                 }
                                 tvDriverName.setText(response.body().getData().getUser_details().getFirst_name() + " " + response.body().getData().getUser_details().getLast_name());
                                 try {
-                                    rating1.setRating(response.body().getData().getUser_details().getRatings());
+                                    float rating = (float) response.body().getData().getUser_details().getRatings();
+                                    rating1.setRating(rating);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -139,6 +140,7 @@ public class RateDriverActivity extends LMTBaseActivity {
                         try {
                             if (response.body().isStatus()) {
                                 showRequestSuccessDialog("Success", response.body().getMessage(), "Ok", 1);
+                                finish();
                             } else {
                                 Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             }

@@ -6,7 +6,8 @@
             <solid android:color="#FFFF"/>
             <stroke
                 android:width="2dp"
-                android:color="#FFFF"/>
+                android:color="#FFFF"
+                />
             <corners android:radius="20dp"/>
         </shape>
     </item>

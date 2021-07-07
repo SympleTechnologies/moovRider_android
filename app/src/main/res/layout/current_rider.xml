@@ -84,6 +84,8 @@
                             android:id="@+id/rating1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="0dp"
                             app:drawable_empty="@mipmap/yellowstar_empty"
                             app:drawable_filled="@mipmap/yellowstar_full"
                             app:drawable_half="@mipmap/yellowstar_half"

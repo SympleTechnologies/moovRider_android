@@ -3,6 +3,7 @@ package com.moovapp.riderapp.main.wallet;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -74,15 +75,24 @@ public class WalletActivity extends LMTBaseActivity {
     private String[] bankCodes;
     private String selectedBankCode = "";
     private String userToSendMoney = "";
+    SwipeRefreshLayout refreshWallet;
 
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-        setContentView(R.layout.wallet_activity);
+        setContentView(R.layout.wallet_layout);
         ButterKnife.bind(this);
+        refreshWallet = findViewById(R.id.refreshWallet);
+        refreshWallet.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                callViewWalletBalanceApi();
+            }
+        });
         callViewWalletBalanceApi();
         callListBanksApi();
         setPhoneNumberListener();
+
     }
 
     private void setPhoneNumberListener() {
@@ -206,6 +216,7 @@ public class WalletActivity extends LMTBaseActivity {
                         try {
                             appPrefes.SaveData(Constants.WALLET_BALANCE, response.body().getWallet_balance() + "");
                             tvBalance.setText(response.body().getWallet_balance() + "");
+                            refreshWallet.setRefreshing(false);
                         } catch (Exception e) {
                             e.printStackTrace();
                             showServerErrorAlert(VIEW_WALLET_BALANCE_API);

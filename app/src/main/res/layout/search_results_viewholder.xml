@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView android:id="@+id/loadResults"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:singleLine="true"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:textColor="#7a787e"
+    android:textSize="14sp"
+    android:background="@color/translucent"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

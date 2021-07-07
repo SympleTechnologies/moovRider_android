@@ -45,13 +45,13 @@ public class VerifyPaymentResponseModel {
          * new_wallet_balance : 80
          */
 
-        private int new_wallet_balance;
+        private double new_wallet_balance;
 
-        public int getNew_wallet_balance() {
+        public double getNew_wallet_balance() {
             return new_wallet_balance;
         }
 
-        public void setNew_wallet_balance(int new_wallet_balance) {
+        public void setNew_wallet_balance(double new_wallet_balance) {
             this.new_wallet_balance = new_wallet_balance;
         }
     }

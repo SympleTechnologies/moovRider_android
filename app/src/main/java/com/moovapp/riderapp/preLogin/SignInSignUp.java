@@ -1,29 +1,31 @@
 package com.moovapp.riderapp.preLogin;
-
+/**
+ * Created by Manuel Chris-Ogar on 1/10/2019.
+ */
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 
 import com.moovapp.riderapp.R;
-import com.moovapp.riderapp.main.fragments.PagerAdapter;
+import com.moovapp.riderapp.main.adapters.PagerAdapter;
 import com.moovapp.riderapp.utils.LMTBaseActivity;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignInSignUp extends LMTBaseActivity {
 
-    String firstTab;
-    Map<String, String> registrationDetails;
+    private String firstTab;
+    Map<String, String> registrationDetails ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_sign_up);
+        registrationDetails = new HashMap<>();
         TabLayout tabLayout = findViewById(R.id.tablayout);
         tabLayout.setBackgroundColor(getResources().getColor(R.color.white));
         if (TextUtils.equals(getIntent().getStringExtra("loginType"), "google") || TextUtils.equals(getIntent().getStringExtra("loginType"), "facebook")){

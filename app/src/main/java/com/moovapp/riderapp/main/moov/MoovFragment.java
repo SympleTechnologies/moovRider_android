@@ -54,6 +54,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -94,9 +95,9 @@ public class MoovFragment extends LMTFragmentHelper implements NotificationActio
     CheckBox cbPool;
     @BindView(R.id.layoutCurrentRider)
     View layoutCurrentRider;
-    @BindView(R.id.spinnerUniversity)
-    Spinner spinnerUniversity;
-    @BindView(R.id.spinnerSeats)
+//    @BindView(R.id.spinnerUniversity)
+//    Spinner spinnerUniversity;
+//    @BindView(R.id.spinnerSeats)
     Spinner spinnerSeats;
     @BindView(R.id.tvAmount)
     TextView tvAmount;
@@ -123,6 +124,9 @@ public class MoovFragment extends LMTFragmentHelper implements NotificationActio
     TextView tvCancelRide;
     @BindView(R.id.tvNoTrips)
     TextView tvNoTrips;
+
+    @BindView(R.id.tvCarColor)
+    TextView tvCarColor;
 
     private PlacesTask placesTask;
     private ParserTask parserTask;
@@ -161,12 +165,14 @@ public class MoovFragment extends LMTFragmentHelper implements NotificationActio
         inItAutoCompleteLocation();
         setAutoCompleteTextViewListners();
         callViewCollegeListApi();
+//        Toast.makeText(getContext(), "createView", Toast.LENGTH_SHORT).show();
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        Toast.makeText(getContext(), "resumed", Toast.LENGTH_SHORT).show();
         if (isNotEnoughBalance) {
             callViewWalletBalanceApi();
         }
@@ -585,13 +591,15 @@ public class MoovFragment extends LMTFragmentHelper implements NotificationActio
         tvRiderName.setText(data.getDriver_details().getFirst_name() + " " + data.getDriver_details().getLast_name());
         tvCarModel.setText(data.getDriver_details().getCar_model());
         tvNoTrips.setText("No of trips: " + data.getDriver_details().getTotal_rides());
-        rating1.setRating(data.getDriver_details().getRatings());
+        rating1.setRating((int)data.getDriver_details().getRatings());
         tvRiderPhone.setText(data.getDriver_details().getPhone());
         tvDistance.setText(data.getDistance_to_drive_details().getDistance());
         tvCarNumber.setText(data.getDriver_details().getVehicle_no());
         tvEta.setText(data.getDistance_to_drive_details().getTime());
+        tvCarColor.setText(data.getDriver_details().getCar_colour());
         try {
             if (data.getDriver_details().getImage().length() > 3) {
+                Picasso.get().load(data.getDriver_details().getCar_image()).placeholder(R.mipmap.user_placeholder).error(R.drawable.avatar2).into(imgRiderImage);
                 Picasso.get().load(data.getDriver_details().getImage()).placeholder(R.mipmap.user_placeholder).error(R.mipmap.user_placeholder).into(imgRiderImage);
             }
         } catch (Exception e) {
@@ -600,61 +608,61 @@ public class MoovFragment extends LMTFragmentHelper implements NotificationActio
     }
 
     private void callViewCollegeListApi() {
-        if (cd.isConnectingToInternet()) {
-            try {
-                myProgressDialog.setProgress(false);
-                ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-                Call<ViewCollegesResponseModel> call = apiService.viewColleges("ride/view_colleges/" + appPrefes.getData(Constants.USER_ID));
-                call.enqueue(new retrofit2.Callback<ViewCollegesResponseModel>() {
-                    @Override
-                    public void onResponse(Call<ViewCollegesResponseModel> call, Response<ViewCollegesResponseModel> response) {
-                        myProgressDialog.dismissProgress();
-                        try {
-                            if (!response.body().isStatus()) {
-                                Toast.makeText(getContext(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                            } else {
-                                List<String> collegeList = new ArrayList<>();
-                                final List<String> collegeIdList = new ArrayList<>();
-                                for (int i = 0; i < response.body().getData().getDetails().size(); i++) {
-                                    collegeList.add(response.body().getData().getDetails().get(i).getName());
-                                    collegeIdList.add(response.body().getData().getDetails().get(i).getId() + "");
-                                }
-                                WhiteSpinnerAdapter collegeAdapter = new WhiteSpinnerAdapter(getActivity(), R.layout.white_spinner_list_item, R.id.title, collegeList);
-                                spinnerUniversity.setAdapter(collegeAdapter);
-                                spinnerUniversity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                    @Override
-                                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                        selectedCollegeId = collegeIdList.get(i);
-                                        callViewRideCostApi();
-                                    }
-
-                                    @Override
-                                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                                    }
-                                });
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            showServerErrorAlert(getContext(), LIST_COLLEGES_API);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ViewCollegesResponseModel> call, Throwable t) {
-                        myProgressDialog.dismissProgress();
-                        System.out.println("t.toString : " + t.toString());
-                        showServerErrorAlert(getContext(), LIST_COLLEGES_API);
-                    }
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-                myProgressDialog.dismissProgress();
-                showServerErrorAlert(getContext(), LIST_COLLEGES_API);
-            }
-        } else {
-            showNoInternetAlert(getContext(), LIST_COLLEGES_API);
-        }
+//        if (cd.isConnectingToInternet()) {
+//            try {
+//                myProgressDialog.setProgress(false);
+//                ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+//                Call<ViewCollegesResponseModel> call = apiService.viewColleges("ride/view_colleges/" + appPrefes.getData(Constants.USER_ID));
+//                call.enqueue(new retrofit2.Callback<ViewCollegesResponseModel>() {
+//                    @Override
+//                    public void onResponse(Call<ViewCollegesResponseModel> call, Response<ViewCollegesResponseModel> response) {
+//                        myProgressDialog.dismissProgress();
+//                        try {
+//                            if (!response.body().isStatus()) {
+//                                Toast.makeText(getContext(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+//                            } else {
+//                                List<String> collegeList = new ArrayList<>();
+//                                final List<String> collegeIdList = new ArrayList<>();
+//                                for (int i = 0; i < response.body().getData().getDetails().size(); i++) {
+//                                    collegeList.add(response.body().getData().getDetails().get(i).getName());
+//                                    collegeIdList.add(response.body().getData().getDetails().get(i).getId() + "");
+//                                }
+//                                WhiteSpinnerAdapter collegeAdapter = new WhiteSpinnerAdapter(getActivity(), R.layout.white_spinner_list_item, R.id.title, collegeList);
+//                                spinnerUniversity.setAdapter(collegeAdapter);
+//                                spinnerUniversity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                                    @Override
+//                                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                                        selectedCollegeId = collegeIdList.get(i);
+//                                        callViewRideCostApi();
+//                                    }
+//
+//                                    @Override
+//                                    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                                    }
+//                                });
+//                            }
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                            showServerErrorAlert(getContext(), LIST_COLLEGES_API);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<ViewCollegesResponseModel> call, Throwable t) {
+//                        myProgressDialog.dismissProgress();
+//                        System.out.println("t.toString : " + t.toString());
+//                        showServerErrorAlert(getContext(), LIST_COLLEGES_API);
+//                    }
+//                });
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//                myProgressDialog.dismissProgress();
+//                showServerErrorAlert(getContext(), LIST_COLLEGES_API);
+//            }
+//        } else {
+//            showNoInternetAlert(getContext(), LIST_COLLEGES_API);
+//        }
     }
 
     private void callViewRideCostApi() {
@@ -675,7 +683,8 @@ public class MoovFragment extends LMTFragmentHelper implements NotificationActio
                         myProgressDialog.dismissProgress();
                         try {
                             if (!response.body().isStatus()) {
-                                Toast.makeText(getContext(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                Log.d("Error", "onResponse: "+ response.body().getMessage());
+//                                Toast.makeText(getContext(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             } else {
                                 tvAmount.setText(response.body().getData().getAmount() + "");
                                 if (Double.parseDouble(response.body().getData().getAmount() + "") > Double.parseDouble(appPrefes.getData(Constants.WALLET_BALANCE))) {

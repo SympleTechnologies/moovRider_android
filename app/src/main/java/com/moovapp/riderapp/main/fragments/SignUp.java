@@ -61,7 +61,7 @@ import retrofit2.Response;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Created by Manuel Chris-Ogar on 1/23/2019.
  */
 public class SignUp extends LMTFragment implements Validator.ValidationListener {
 
@@ -156,7 +156,7 @@ public class SignUp extends LMTFragment implements Validator.ValidationListener 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(view);
+        ButterKnife.bind(this, view);
         edEmail = view.findViewById(R.id.edEmail);
         edFirstName = view.findViewById(R.id.edFirstName);
         rootView = view.findViewById(R.id.rootView);
@@ -167,7 +167,7 @@ public class SignUp extends LMTFragment implements Validator.ValidationListener 
         imgSeekBar = view.findViewById(R.id.imgSeekBar);
         spinnerInstitution = view.findViewById(R.id.spinnerInstitution);
         spinnerRole = view.findViewById(R.id.spinnerRole);
-        tvNext  =view.findViewById(R.id.tvNext);
+//        tvNext  =view.findViewById(R.id.tvNext);
         validator = new Validator(this);
         validator.setValidationListener(this);
         if (getArguments() != null){
@@ -177,6 +177,8 @@ public class SignUp extends LMTFragment implements Validator.ValidationListener 
                 authModeStr = "social";
             }
         }
+
+
 
         callListCollegesApi();
         keyboardListener();
@@ -255,24 +257,29 @@ public class SignUp extends LMTFragment implements Validator.ValidationListener 
         getActivity().finish();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        if (currentPage == 1) {
-//            showAlertDialog("Exit", "Are you sure you want to exit from registration?", "Yes", "Cancel", EXIT_DIALOG);
-//        } else if (currentPage == 2) {
-//            llAlreadyHaveAccount.setVisibility(View.VISIBLE);
-//            layoutOne.setVisibility(View.VISIBLE);
-//            layoutTwo.setVisibility(View.GONE);
-//            imgSeekBar.setImageResource(R.mipmap.slide_bar_one);
-//            currentPage = 1;
-//        } else if (currentPage == 3) {
-//            llAlreadyHaveAccount.setVisibility(View.INVISIBLE);
-//            layoutThree.setVisibility(View.GONE);
-//            layoutTwo.setVisibility(View.VISIBLE);
-//            imgSeekBar.setImageResource(R.mipmap.slide_bar_two);
-//            currentPage = 2;
-//        }
-//    }
+    @Override
+    public boolean onBackPressed() {
+        if (currentPage == 1) {
+            showAlertDialog("Exit", "Are you sure you want to exit from registration?", "Yes", "Cancel", EXIT_DIALOG);
+            return true;
+        } else if (currentPage == 2) {
+            llAlreadyHaveAccount.setVisibility(View.VISIBLE);
+            layoutOne.setVisibility(View.VISIBLE);
+            layoutTwo.setVisibility(View.GONE);
+            imgSeekBar.setImageResource(R.mipmap.slide_bar_one);
+            currentPage = 1;
+            return true;
+        } else if (currentPage == 3) {
+            llAlreadyHaveAccount.setVisibility(View.INVISIBLE);
+            layoutThree.setVisibility(View.GONE);
+            layoutTwo.setVisibility(View.VISIBLE);
+            imgSeekBar.setImageResource(R.mipmap.slide_bar_two);
+            currentPage = 2;
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     @OnClick(R.id.tvNext)
     public void tvNextClick() {

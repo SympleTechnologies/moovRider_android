@@ -8,6 +8,7 @@ public class Constants {
 
     //API Constants
     public static String BASE_URL = "http://themoovapp.com/api/v2/";
+    public static String HEROKU_URL = "https://moov-php-backend.herokuapp.com/v2/";
     public static String PRODUCTS_IMAGE_URL = "https://";
 
     //Driver Constants

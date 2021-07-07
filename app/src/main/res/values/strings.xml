@@ -8,8 +8,9 @@
     <string name="cancel">Cancel</string>
     <string name="upload">Upload</string>
     <string name="take_picture">Take Picture</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="incorrect_username_or_password">Incorrect Username or Password. Forgot Password?<u> CLICK HERE</u> </string>
+    <string name="incorrect_username_or_password">Incorrect Username or Password. Forgot Password? Please Try Again </string>
+    <string name="dummy_pickup">Pick Up Location</string>
+    <string name="dummy_location">Name Of Location</string>
+    <string name="no_internet_text">Can\'t Connect to the Internet.\n Please check your network \n settings!</string>
 </resources>

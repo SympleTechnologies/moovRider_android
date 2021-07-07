@@ -100,8 +100,8 @@ public class UpcomingRidesFragment extends LMTFragmentHelper implements Notifica
                         myProgressDialog.dismissProgress();
                         swipeRefreshLayout.setRefreshing(false);
                         try {
-                            if (response.body().isStatus()) {
-                                currentRideId = response.body().getData().get(0).getRide_id() + "";
+                            if (response.body().getStatus()) {
+                                currentRideId = response.body().getData().get(0).getRideId() + "";
                                 setValues(response.body().getData());
                             } else {
                                 tvNoRides.setVisibility(View.VISIBLE);

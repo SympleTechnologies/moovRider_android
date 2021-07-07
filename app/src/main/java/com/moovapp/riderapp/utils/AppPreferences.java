@@ -48,7 +48,7 @@ public class AppPreferences {
 
     public void SaveIntData(String Tag, Integer text) {
         // prefsEditor.putString(Tag, text);
-        prefsEditor.putInt(Tag, text);
+        prefsEditor.putInt(Tag, Integer.valueOf(text));
         prefsEditor.commit();
     }
 

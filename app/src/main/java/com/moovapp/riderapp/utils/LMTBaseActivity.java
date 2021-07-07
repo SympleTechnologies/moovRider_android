@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.moovapp.riderapp.R;
+import com.moovapp.riderapp.main.HomeActivity;
 import com.moovapp.riderapp.utils.progress.MyProgressDialog;
 
 
@@ -20,6 +22,8 @@ public class LMTBaseActivity extends AppCompatActivity implements NetworkChangeR
     public ProgressDialog progressDialog;
     public ConnectionDetector cd;
     public MyProgressDialog myProgressDialog;
+    public TextView tvOk;
+    public boolean cancelledTrip;
 
     @Override
     protected void onCreate(Bundle arg0) {
@@ -118,7 +122,7 @@ public class LMTBaseActivity extends AppCompatActivity implements NetworkChangeR
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         final TextView tvTitle = (TextView) dialog.findViewById(R.id.tvTitle);
         final TextView tvMessage = (TextView) dialog.findViewById(R.id.tvMessage);
-        final TextView tvOk = (TextView) dialog.findViewById(R.id.tvOk);
+        tvOk = (TextView) dialog.findViewById(R.id.tvOk);
         final TextView tvCancel = (TextView) dialog.findViewById(R.id.tvCancel);
         tvTitle.setText(title);
         tvMessage.setText(message);
@@ -146,6 +150,7 @@ public class LMTBaseActivity extends AppCompatActivity implements NetworkChangeR
     }
 
     public void onClickAlertOkButton(int apiCode) {
+
 
     }
 

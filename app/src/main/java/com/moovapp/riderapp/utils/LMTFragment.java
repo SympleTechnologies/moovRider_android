@@ -42,6 +42,11 @@ public class LMTFragment extends Fragment implements NetworkChangeReceiver.Inter
 //    }
 
 
+    public boolean onBackPressed() {
+        return false;
+    }
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

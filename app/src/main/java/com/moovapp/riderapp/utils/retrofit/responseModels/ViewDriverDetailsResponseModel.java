@@ -132,7 +132,7 @@ public class ViewDriverDetailsResponseModel {
             private String license_no;
             private String license_expiry;
             private String dob;
-            private int ratings;
+            private double ratings;
             private String wallet_balance;
             private String image;
 
@@ -256,11 +256,11 @@ public class ViewDriverDetailsResponseModel {
                 this.dob = dob;
             }
 
-            public int getRatings() {
+            public double getRatings() {
                 return ratings;
             }
 
-            public void setRatings(int ratings) {
+            public void setRatings(double ratings) {
                 this.ratings = ratings;
             }
 

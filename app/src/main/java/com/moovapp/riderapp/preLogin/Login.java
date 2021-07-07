@@ -1,5 +1,7 @@
 package com.moovapp.riderapp.preLogin;
-
+/**
+ * Created by Manuel Chris-Ogar on 1/10/2019.
+ */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -164,15 +166,15 @@ public class Login extends LMTBaseActivity implements View.OnClickListener{
                 myProgressDialog.setProgress(false);
                 ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                 Call<SocialLoginResponseModel> call = apiService.socialLogin(loginType, id, "android", appPrefes.getData(Constants.DEVICE_TOKEN), "2.0");
-
+                Log.d("social", "callSocialLoginApi: "+appPrefes.getData(Constants.DEVICE_TOKEN));
                 call.enqueue(new retrofit2.Callback<SocialLoginResponseModel>() {
                     @Override
                     public void onResponse(Call<SocialLoginResponseModel> call, Response<SocialLoginResponseModel> response) {
                         myProgressDialog.dismissProgress();
 //                        Log.d(TAG, "onResponse: "+ response.body());
-                        Log.d(TAG, "onResponse: "+ response.raw().body());
+//                        Log.d(TAG, "onResponse: "+ response.raw().body());
 //                        Log.e("response", "onResponse: "+response.body().getData().getUser_details().getWallet_balance() );
-                        Log.e("response", "onResponse: "+response.body().getData().getUser_details().getU_first_name() );
+//                        Log.e("response", "onResponse: "+response.body().getData().getUser_details().getU_first_name() );
                         try {
                             if (!response.body().isStatus()) {
                                 Intent intent = new Intent(Login.this, SignInSignUp.class);

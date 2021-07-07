@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:weightSum="5"
-    android:background="@color/grayLitest"
     android:id="@+id/rootView"
-    tools:context=".main.fragments.SignIn">
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="6">
+
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".6"
+        android:src="@mipmap/logo" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".5" />
-
+        android:layout_weight=".2" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:src="@mipmap/logo" />
-    <ImageView
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".4"
+        android:layout_weight=".25"
         android:src="@mipmap/lets_moov_text" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,169 +45,328 @@
             android:src="@mipmap/slide_bar_one" />
     </LinearLayout>
 
-
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="32dp"
-        android:layout_weight="3.5"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="4.28"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
 
+
+
+        <ScrollView
+            android:layout_weight=".8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:visibility="visible"
+                    android:id="@+id/layoutOne"
+                    layout="@layout/sign_up_activity_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp" />
+
+                <include
+                    android:visibility="gone"
+                    android:id="@+id/layoutTwo"
+                    layout="@layout/sign_up_activity_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="70dp"
+                    />
+
+                <include
+                    android:id="@+id/layoutThree"
+                    layout="@layout/sign_up_activity_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="70dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="@dimen/medium_dimens"
-            android:orientation="horizontal"
-            android:weightSum="2"
+            android:layout_weight=".2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:orientation="vertical">
 
             <android.support.v7.widget.CardView
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="17dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/edFirstName"
-                    android:background="@drawable/border_white"
-                    android:hint="First Name"
-                    android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardBackgroundColor="#F21466"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="4dp">
+
+
+                <TextView
+                    android:id="@+id/tvNext"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp" />
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:text="NEXT"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
             </android.support.v7.widget.CardView>
 
-
-            <android.support.v7.widget.CardView
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="17dp"
-                android:layout_marginLeft="8dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:background="@drawable/border_white"
-                    android:hint="Surname"
-                    android:padding="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <android.support.v7.widget.CardView
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="17dp"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/edEmail"
-                android:background="@drawable/border_white"
-                android:hint="Email"
-                android:padding="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="17dp"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:background="@drawable/border_white"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="17dp"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:background="@drawable/border_white"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"
-                android:padding="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-        </android.support.v7.widget.CardView>
-
-        <LinearLayout
-            android:id="@+id/llAlreadyHaveAccount"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-        <TextView
-            android:textColor="@color/gray"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Do You Have an Account? Sign In"/>
-
-        </LinearLayout>
-
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            app:cardBackgroundColor="#FF1493"
-            app:cardCornerRadius="17dp"
-            app:cardElevation="4dp">
-
-
-            <TextView
-                android:id="@+id/tvNext"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:textAllCaps="true"
-                android:text="Continue"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-
-            <!--<LinearLayout-->
+            <!--<TextView-->
+            <!--android:id="@+id/tvNext"-->
             <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:background="@drawable/layout_primary_little_rounded_white_bg"-->
+            <!--android:gravity="center"-->
+            <!---->
+            <!--android:textColor="@color/colorPrimary"-->
+            <!--android:textSize="16dp" />-->
 
-            <!--<ImageView-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_width="wrap_content"-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/llAlreadyHaveAccount"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Do you have an account?"
+                    android:textColor="@color/grayDark"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:visibility="invisible"
+                    android:id="@+id/tvSignIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="Sign in"
+                    android:textColor="@color/redDark"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:orientation="vertical"-->
+    <!--android:weightSum="5"-->
+    <!--android:background="@color/grayLitest"-->
+    <!--android:id="@+id/rootView"-->
+    <!--tools:context=".main.fragments.SignIn">-->
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".5" />-->
+
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".8"-->
+        <!--android:src="@mipmap/logo" />-->
+    <!--<ImageView-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".4"-->
+        <!--android:src="@mipmap/lets_moov_text" />-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".55"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imgSeekBar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:src="@mipmap/slide_bar_one" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:padding="32dp"-->
+        <!--android:layout_weight="3.5"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp">-->
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginRight="@dimen/medium_dimens"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--app:cardBackgroundColor="@color/white"-->
+                <!--app:cardCornerRadius="17dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<EditText-->
+                    <!--android:id="@+id/edFirstName"-->
+                    <!--android:background="@drawable/border_white"-->
+                    <!--android:hint="First Name"-->
+                    <!--android:padding="15dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="50dp" />-->
+            <!--</android.support.v7.widget.CardView>-->
+
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--app:cardBackgroundColor="@color/white"-->
+                <!--app:cardCornerRadius="17dp"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<EditText-->
+                    <!--android:background="@drawable/border_white"-->
+                    <!--android:hint="Surname"-->
+                    <!--android:padding="15dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="50dp" />-->
+            <!--</android.support.v7.widget.CardView>-->
+        <!--</LinearLayout>-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--app:cardBackgroundColor="@color/white"-->
+            <!--app:cardCornerRadius="17dp"-->
+            <!--android:layout_margin="16dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<EditText-->
+                <!--android:id="@+id/edEmail"-->
+                <!--android:background="@drawable/border_white"-->
+                <!--android:hint="Email"-->
+                <!--android:padding="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp" />-->
+        <!--</android.support.v7.widget.CardView>-->
+
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--app:cardBackgroundColor="@color/white"-->
+            <!--app:cardCornerRadius="17dp"-->
+            <!--android:layout_margin="16dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<EditText-->
+                <!--android:background="@drawable/border_white"-->
+                <!--android:hint="Password"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:padding="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp" />-->
+        <!--</android.support.v7.widget.CardView>-->
+
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--app:cardBackgroundColor="@color/white"-->
+            <!--app:cardCornerRadius="17dp"-->
+            <!--android:layout_margin="16dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<EditText-->
+                <!--android:background="@drawable/border_white"-->
+                <!--android:hint="Confirm Password"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:padding="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp" />-->
+        <!--</android.support.v7.widget.CardView>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/llAlreadyHaveAccount"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal">-->
+        <!--<TextView-->
+            <!--android:textColor="@color/gray"-->
+            <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center_vertical"-->
-            <!--android:src="@drawable/ic_create_account" />-->
+            <!--android:textAlignment="center"-->
+            <!--android:text="Do You Have an Account? Sign In"/>-->
+
+        <!--</LinearLayout>-->
+
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_margin="20dp"-->
+            <!--app:cardBackgroundColor="#FF1493"-->
+            <!--app:cardCornerRadius="17dp"-->
+            <!--app:cardElevation="4dp">-->
 
 
             <!--<TextView-->
-            <!--android:id="@+id/tvSignIn"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center_vertical"-->
-            <!--android:layout_margin="10dp"-->
-            <!--android:gravity="center"-->
-            <!--android:text="CREATE A NEW ACCOUNT"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="15sp" />-->
+                <!--android:id="@+id/tvNext"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="8dp"-->
+                <!--android:textAllCaps="true"-->
+                <!--android:text="Continue"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="15sp" />-->
 
 
-            <!--</LinearLayout>-->
+            <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent">&ndash;&gt;-->
 
-        </android.support.v7.widget.CardView>
+            <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="10dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_create_account" />&ndash;&gt;-->
 
-    </LinearLayout>
 
-</LinearLayout>
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/tvSignIn"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_margin="10dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="CREATE A NEW ACCOUNT"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textAlignment="center"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textColor="@color/white"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textSize="15sp" />&ndash;&gt;-->
+
+
+            <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+    <!--</LinearLayout>-->
+
+<!--</LinearLayout>-->
